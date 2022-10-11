@@ -1,11 +1,11 @@
 # INFO 734 : Fullstack
 
-## Contacts
+##### **[#1]** - *Complexe* - Visualisation sous forme de dashboard d'une capture Stream Twitter
 
-- Encadrant: Antonin ROSA--MARTIN
-- Email: antonin.martin.rosa@gmail.com
-- ID Discord: MrWormsy#2230
-- Serveur discord de la classe: ?
+1) Capture Twitter depuis son compte sur un mot clef
+2) Création d'un dashboard pertinent pour montrer ces données
+3) Utilisation d'une base de données "froide" pour persister les données
+4) Utilisation d'une websocket (genre SocketIO) pour envoyer les données récupérées lors d'une stream vers le dashboard
 
 ## Récapitulatif des séances
 
@@ -26,43 +26,88 @@
 
 ## Contenu théorique des séances
 
-***
+### Séance 1 - CM 1 - 10/13/2022 de 9:45 à 11:15:
 
-### Séance 1 - 10/13/2022 de 9:45 à 11:15:
+###### La première séance fait office d'introduction au javascript, le but n'est pas de voir en profondeur ce langage, mais de comprendre les bases de ce dernier pour pouvoir comprendre, interagir avec et concevoir les projets fullstack.
 
-La première séance fait office d'introduction au javascript, le but n'est pas de voir en profondeur ce langage, mais de comprendre les bases de ce dernier pour pouvoir comprendre, interagir avec et concevoir les projets fullstack.
-
-Le mieux est d'avoir déjà fait du JS ou à minima de regarder le site https://fr.javascript.info/ qui donne les bases du langage.
+###### Le mieux est d'avoir déjà fait du JS ou à minima de regarder le site https://fr.javascript.info/ qui donne les bases du langage.
 
 #### Cheminement de la séance
 
 1) *Petit Quiz pour savoir qui a déjà fait du JS*
-2) *Présentation du JS à l'aide d'un mini diapo*
-3) *Présentation de quelques cas personnels et d'étude*
-4) ...
+2) *Présentation du JS à l'aide d'une diapo*
+3) *Présentation de quelques cas personnels*
 5) *Manipulation du JS avec quelques petits exercices*
+
+### Pour la prochaine séance
+
+1) Installer docker et se renseigner sur ce que ça fait: https://www.youtube.com/watch?v=8cH0ilGlQdE
 
 #### Notes de fin de cours
 
 ***
 
-### Séance 2 - 10/18/2022 de 13:15 à 14:45:
+### Séance 2 - CM 2 - 10/18/2022 de 13:15 à 14:45:
 
-La deuxième séance sera la présentation de ce qu'est la programmation Fullstack par des exemples et de ma manipulation. Plusieurs façons de faire du Fullstack seront présentées, mais le JS avec Express et EJS sera la priorité.
+###### La deuxième séance sera la présentation de ce qu'est la programmation Fullstack par des exemples et de ma manipulation. Plusieurs façons de faire du Fullstack seront présentées, mais le NodeJS avec Express et EJS seront la priorité.
 
 #### Cheminement de la séance
 
 1) *Petit Quiz de ce qu'évoque le terme Fullstack aux étudiants*
 2) *Petit Quiz nuage de mot pour évoquer les langages et / ou technologies pour faire du Fullstack*
 3) *Présentation de quelques cas personnels et d'étude*
-4) ...
-5) *Manipulation du JS avec quelques petits exercices*
+4) *Présentation de Docker*
+5) *Présentation de quelques bases de données noSQL froides (mongoDB) et chaudes (redis)*
 
 #### Notes de fin de cours
 
 ***
 
-### Séance 3 - 10/19/2022 de 13:15 à 17:15
+### Séance 3 - TP 1 - 10/19/2022 de 13:15 à 17:15
+
+###### Ce TP est pour vraiment prendre en main le NodeJS avec des petits exercices en node, puis l'utilisation d'un projet "dummy" pour comprendre une architecture pouvant être utilisée en Fullstack avec Express.
+
+#### Cheminement de la séance
+
+1) *Installation de Docker et utilisation de docker-compose pour avoir un environnement sain et collectif de travail*
+2) *Petits exercices en NodeJS depuis l'environnement Docker*
+3) *Lancement du projet* **TP1-1** *pour voir l'architecture Fullstack d'un projet avec l'encadrant*
+4) *Mise à jour du projet* **TP1-1** *avec la consigne dans le README.MD de ce dernier*
+
+#### Notes de fin de cours
+
+***
+
+### [WIP] Séance 4 - CM 3 - 10/21/2022 de 8:00 à 9:30
+
+###### Cette séance servira d'introduction aux différentes façons de faire du fullstack. Avec 3 types de backend: Express (js), Echo (go) & Flask (python). Avec 3 types de frontend: EJS avec Express, React & NextJS.
+
+#### Cheminement de la séance
+
+1) *Diaporama pour présenter 3 (backend) API REST avec 3 langages différents*
+2) *Diaporama pour présenter 3 (frontend) Framework en NodeJS*
+3) *Façons de faire transiter la donnée, API REST et Websockets*
+
+#### Notes de fin de cours
+
+***
+
+### [WIP] Séance 5 - TD 1 - 10/21/2022 de 9:45 à 11:15
+
+###### TD pour regarder, manipuler & appréhender NextJS comme frontend et Express, Echo & Flask comme backend. Tou sera fait pas à pas et en interaction avec la classe.
+
+#### Cheminement de la séance
+
+1) *Regarder, comprendre et manipuler les projets dans* **TD1-1**, **TD1-2**, **TD1-3**
+2) *Regarder, comprendre et manipuler le projet dans* **TD1-4** *et ajouter ce qui est demandé dans le README.MD de ce dernier*
+
+#### Notes de fin de cours
+
+***
+
+### [WIP] Séance 6 - TP 2 - 10/27/2022 de 13:30 à 17:30
+
+###### Manipulation de Redis et SocketIO dans un TP. Plus mise en place de ces projets dans des images Docker avec utilisation de docker-compose qui sera un aspect du projet.
 
 #### Cheminement de la séance
 
@@ -70,7 +115,15 @@ La deuxième séance sera la présentation de ce qu'est la programmation Fullsta
 
 ***
 
-### Séance 4 - 10/21/2022 de 8:00 à 9:30
+### [WIP] Séance 7 - CM 4 - 11/10/2022 de 11:15 à 12:45
+
+###### /!\ Attention je serai aux USA pour cette séance, donc visio /!\
+
+###### Mini cours de comment utiliser GIT pour le projet, qui sera un aspect de la note du projet !
+
+###### Mini présentation de Trello pour la gestion de projet qui sera un aspect de la note du projet
+
+###### Présentation des projets à réaliser en "groupe" de 1 à 3 et création de nouveaux projets s'il y a d'autres idées. Le but de ce projet est que l'étudiant comprenne comment un projet se structure et se suit en étant seul ou en équipe.
 
 #### Cheminement de la séance
 
@@ -78,7 +131,11 @@ La deuxième séance sera la présentation de ce qu'est la programmation Fullsta
 
 ***
 
-### Séance 5 - 10/21/2022 de 9:45 à 11:15
+### [WIP] Séance 8 - TP 3 - 11/14/2022 de 13:15 à 17:15
+
+###### /!\ Attention je serai aux USA pour cette séance, donc visio /!\
+
+###### 1er TP de projet où je reste disponible ~H24 mais ce TP se fait en autonomie, si vous n'avez pas envie de venir en visio, pas de soucis, mais sachez que je verrai votre historique GIT et je verrai donc si vous avez travaillé lors de cette séance !
 
 #### Cheminement de la séance
 
@@ -86,7 +143,9 @@ La deuxième séance sera la présentation de ce qu'est la programmation Fullsta
 
 ***
 
-### Séance 6 - 10/27/2022 de 13:30 à 17:30
+### [WIP] Séance 9 - CM 5 - 11/29/2022 de 14:30 à 16:00
+
+##### Séance de mi-projet avec une mini présentation de ce que vous avez fait, des problèmes rencontrés et ce que devrez encore faire
 
 #### Cheminement de la séance
 
@@ -94,7 +153,9 @@ La deuxième séance sera la présentation de ce qu'est la programmation Fullsta
 
 ***
 
-### Séance 7 - 11/10/2022 de 11:15 à 12:45
+### [WIP] Séance 10 - TP 4 - 12/07/2022 de 13:15 à 17:15
+
+###### 2ème TP de projet où je reste disponible ~H24 mais ce TP se fait en autonomie. Je viendrai voir chaque personne pour m'assurer que tout vas bien et régler des problèmes ou répondre à des questions.
 
 #### Cheminement de la séance
 
@@ -102,7 +163,9 @@ La deuxième séance sera la présentation de ce qu'est la programmation Fullsta
 
 ***
 
-### Séance 8 - 11/14/2022 de 13:15 à 17:15
+### [WIP] Séance 11 - TP 5 - 12/16/2022 de 13:30 à 17:30
+
+###### 3ème TP de projet où je reste disponible ~H24 mais ce TP se fait en autonomie. Je viendrai voir chaque personne pour m'assurer que tout vas bien et régler des problèmes ou répondre à des questions.
 
 #### Cheminement de la séance
 
@@ -110,33 +173,9 @@ La deuxième séance sera la présentation de ce qu'est la programmation Fullsta
 
 ***
 
-### Séance 9 - 11/29/2022 de 14:30 à 16:00
+### [WIP] Séance 12 - CM 6 - 01/03/2023 de 9:45 à 11:15
 
-#### Cheminement de la séance
-
-#### Notes de fin de cours
-
-***
-
-### Séance 10 - 12/07/2022 de 13:15 à 17:15
-
-#### Cheminement de la séance
-
-#### Notes de fin de cours
-
-***
-
-### Séance 11 - 12/16/2022 de 13:30 à 17:30
-
-#### Cheminement de la séance
-
-#### Notes de fin de cours
-
-***
-
-### Séance 12 - 01/03/2023 de 9:45 à 11:15
-
-Cette séance est prévue pour que les étudiants présentent brièvement leurs travaux par groupes en 5 minutes de présentation maximum. *Pour le moment, je ne sais pas si la présentation sera notée ou si elle sera juste pour avoir des points bonus*
+###### Cette séance est prévue pour que les étudiants présentent brièvement leurs travaux par groupes en 5 minutes de présentation maximum + présentation en direct live avec un docker-compose. Pour le moment, je ne sais pas si la présentation sera notée ou si elle sera juste pour avoir des points bonus*
 
 #### Cheminement de la séance
 
