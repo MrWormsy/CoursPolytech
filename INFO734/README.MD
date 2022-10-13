@@ -17,6 +17,20 @@
 | INFO734 - TP | 12/16/2022 | 13:30 | 17:30 |
 | INFO734 - CM | 01/03/2023 | 9:45  | 11:15 |
 
+## Notation
+
+### *Quelques (petits) tests écrits*
+
+Il y aura des petites interrogations écrites toutes les séances ou une séance sur deux pour vérifier que l'étudiant a compris. Ces interrogations sont faites seulement pour vérifier les compétences, il faut donc jouer le jeu et s'impliquer un minimum.
+
+### *Note de projet finale*
+
+Vous serez noté sur :
+1) *La qualité du code*
+2) *L'utilisation de Trello (pour voir comment vous avez géré votre projet)*
+3) *L'utilisation de Git (voir comment et combien de temps vous avez travaillé)*
+4) *Les explications sur comment et pourquoi vous avez réalisé telle ou telle tache lors des séances de restitution*
+
 ## Contenu théorique des séances
 
 ### Séance 1 - CM 1 - 10/13/2022 de 9:45 à 11:15:
@@ -43,6 +57,8 @@
 ### Séance 2 - CM 2 - 10/18/2022 de 13:15 à 14:45:
 
 ###### La deuxième séance sera la présentation de ce qu'est la programmation Fullstack par des exemples et de ma manipulation. Plusieurs façons de faire du Fullstack seront présentées, mais le NodeJS avec Express et EJS seront la priorité.
+
+*Un petit exercice écrit sera donné sur ce que j'ai dit la semaine dernière, il ne doit pas durer plus de 5 minutes. Il sert à voir si vous avez compris les bases du JS.*
 
 #### Cheminement de la séance
 
