@@ -21,11 +21,13 @@
 
 ### *Quelques (petits) tests écrits*
 
-Il y aura des petites interrogations écrites toutes les séances ou une séance sur deux pour vérifier que l'étudiant a compris. Ces interrogations sont faites seulement pour vérifier les compétences, il faut donc jouer le jeu et s'impliquer un minimum.
+Il y aura des petites interrogations écrites toutes les séances ou une séance sur deux pour vérifier que l'étudiant a compris. Ces interrogations sont faites seulement pour vérifier les compétences, il faut donc jouer le jeu et s'impliquer un
+minimum.
 
 ### *Note de projet finale*
 
 Vous serez noté sur :
+
 1) *La qualité du code*
 2) *L'utilisation de Trello (pour voir comment vous avez géré votre projet)*
 3) *L'utilisation de Git (voir comment et combien de temps vous avez travaillé)*
@@ -65,7 +67,7 @@ Vous serez noté sur :
 1) *Petit Quiz de ce qu'évoque le terme Fullstack aux étudiants*
 2) *Petit Quiz nuage de mot pour évoquer les langages et / ou technologies pour faire du Fullstack*
 3) *Présentation de quelques cas personnels et d'étude*
-4) *Présentation de Docker*
+4) *Présentation de Docker et docker-compose*
 5) *Présentation de quelques bases de données noSQL froides (mongoDB) et chaudes (redis)*
 
 #### Notes de fin de cours
@@ -74,7 +76,7 @@ Vous serez noté sur :
 
 ### Séance 3 - TP 1 - 10/19/2022 de 13:15 à 17:15
 
-###### Ce TP est pour vraiment prendre en main le NodeJS avec des petits exercices en node, puis l'utilisation d'un projet "dummy" pour comprendre une architecture pouvant être utilisée en Fullstack avec Express.
+###### Ce TP est pour vraiment prendre en main le NodeJS avec des petits exercices en node, puis l'utilisation d'un projet "dummy" pour comprendre une architecture pouvant être utilisée en Fullstack avec Express. Puis création de sa propre image Docker.
 
 #### Cheminement de la séance
 
@@ -96,6 +98,7 @@ Vous serez noté sur :
 1) *Diaporama pour présenter 3 (backend) API REST avec 3 langages différents*
 2) *Diaporama pour présenter 3 (frontend) Framework en NodeJS*
 3) *Façons de faire transiter la donnée, API REST et Websockets*
+4) *Principe de la session et du compte utilisateur*
 
 #### Notes de fin de cours
 
@@ -103,7 +106,7 @@ Vous serez noté sur :
 
 ### [WIP] Séance 5 - TD 1 - 10/21/2022 de 9:45 à 11:15
 
-###### TD pour regarder, manipuler & appréhender NextJS comme frontend et Express, Echo & Flask comme backend. Tou sera fait pas à pas et en interaction avec la classe.
+###### TD pour regarder, manipuler & appréhender NextJS comme frontend et Express, Echo & Flask comme backend. Tout sera fait pas à pas et en interaction avec la classe.
 
 #### Cheminement de la séance
 
@@ -116,7 +119,7 @@ Vous serez noté sur :
 
 ### [WIP] Séance 6 - TP 2 - 10/27/2022 de 13:30 à 17:30
 
-###### Manipulation de Redis et SocketIO dans un TP. Plus mise en place de ces projets dans des images Docker avec utilisation de docker-compose qui sera un aspect du projet.
+###### Manipulation de Redis, Session et SocketIO dans un TP. Plus mise en place de ces projets dans des images Docker avec utilisation de docker-compose qui sera un aspect du projet.
 
 #### Cheminement de la séance
 
@@ -124,7 +127,7 @@ Vous serez noté sur :
 
 ***
 
-### [WIP] Séance 7 - CM 4 - 11/10/2022 de 11:15 à 12:45
+### [WIP] Séance 7 - CM (TD) 4 - 11/10/2022 de 11:15 à 12:45
 
 ###### /!\ Attention je serai aux USA pour cette séance, donc visio /!\
 
