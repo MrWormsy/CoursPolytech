@@ -84,8 +84,24 @@ const moyenneTrimestre = {
 const aDejaFaitDuJs = true;
 
 const phrase = `Je m'appelle ${prenom} ${nom} et j'ai ${age} ans. Au semestre dernier j'ai eu ${moyenneTrimestre.premierTrismestre}/20 et ${moyenneTrimestre.secondTrismestre}/20 ${aDejaFaitDuJs ? "j'ai déjà fait du JS" : "je n'ai jamais fait du JS"}`
+const phrase2 = "Je m'appelle " + prenom + " " + nom + "et j'ai " + age + " ans. Au semestre dernier j'ai eu " + moyenneTrimestre.premierTrismestre + "/20 et " + moyenneTrimestre.secondTrismestre + "/20"
 
 console.log(phrase)
+console.log(phrase2)
+
+// Exemple de promesses
+const prom = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+            console.log("1")
+        resolve()
+  }, 1000)
+})
+
+prom.then(function (value) {
+  setTimeout(function () {
+      console.log("2")
+  }, 2000)  
+})
 ```
 
 #### Cheminement de la séance
@@ -97,6 +113,9 @@ console.log(phrase)
 5) *Présentation de quelques bases de données noSQL froides (mongoDB) et chaudes (redis)*
 
 #### Notes de fin de cours
+
+- Enseigner Docker et comment utiliser Docker, car ils connaissent un peu la théorie, mais pas de pratique
+- Essayer d'introduire les promesses
 
 ***
 
