@@ -114,6 +114,7 @@ prom.then(function (value) {
 
 #### Notes de fin de cours
 
+- Le cours est pas assez long
 - Enseigner Docker et comment utiliser Docker, car ils connaissent un peu la théorie, mais pas de pratique
 - Essayer d'introduire les promesses
 
