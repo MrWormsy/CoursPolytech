@@ -35,7 +35,7 @@ Vous serez noté sur :
 
 ## Contenu théorique des séances
 
-### Séance 1 - CM 1 - 10/13/2022 de 9:45 à 11:15:
+### [Séance 1 - CM 1 - 10/13/2022 de 9:45 à 11:15](https://github.com/MrWormsy/CoursPolytech/blob/8a16c6794b7b08029e36d3adf181014150056f7d/INFO734/Cours/CM1/INFO734%20-%20CM%20-%201.pdf):
 
 ###### La première séance fait office d'introduction au javascript, le but n'est pas de voir en profondeur ce langage, mais de comprendre les bases de ce dernier pour pouvoir comprendre, interagir avec et concevoir les projets fullstack.
 
@@ -56,11 +56,22 @@ Vous serez noté sur :
 
 ***
 
-### Séance 2 - CM 2 - 10/18/2022 de 13:15 à 14:45:
+### [Séance 2 - CM 2 - 10/18/2022 de 13:15 à 14:45](https://github.com/MrWormsy/CoursPolytech/blob/8a16c6794b7b08029e36d3adf181014150056f7d/INFO734/Cours/CM2/INFO%20734%20-%20CM%20-%202.pdf):
 
 ###### La deuxième séance sera la présentation de ce qu'est la programmation Fullstack par des exemples et de ma manipulation. Plusieurs façons de faire du Fullstack seront présentées, mais le NodeJS avec Express et EJS seront la priorité.
 
+##### Mini interrogation - CM 2 - 5 minutes
+
 *Un petit exercice écrit sera donné sur ce que j'ai dit la semaine dernière, il ne doit pas durer plus de 5 minutes. Il sert à voir si vous avez compris les bases du JS.*
+
+Écrire une variable chaîne de caractères à l'aide de variables (penser à la concaténation ou le formatage de chaîne de caractères) pour vous présenter en langage Javascript avec les variables suivantes (variable: type):
+- nom: string
+- prénom: string
+- age: number
+- moyenneTrimestres: object (où les clefs doivent être)
+    - premierTrismestre: number
+    - secondTrismestre: number
+- aDejaFaitDuJs: boolean
 
 #### Cheminement de la séance
 
