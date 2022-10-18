@@ -73,6 +73,21 @@ Vous serez noté sur :
     - secondTrismestre: number
 - aDejaFaitDuJs: boolean
 
+```javascript
+const nom = "ROSA--MARTIN";
+const prenom = "Antonin";
+const age = 24;
+const moyenneTrimestre = {
+  premierTrismestre: 12.4,
+  secondTrismestre: 14.8
+}
+const aDejaFaitDuJs = true;
+
+const phrase = `Je m'appelle ${prenom} ${nom} et j'ai ${age} ans. Au semestre dernier j'ai eu ${moyenneTrimestre.premierTrismestre}/20 et ${moyenneTrimestre.secondTrismestre}/20 ${aDejaFaitDuJs ? "j'ai déjà fait du JS" : "je n'ai jamais fait du JS"}`
+
+console.log(phrase)
+```
+
 #### Cheminement de la séance
 
 1) *Petit Quiz de ce qu'évoque le terme Fullstack aux étudiants*
