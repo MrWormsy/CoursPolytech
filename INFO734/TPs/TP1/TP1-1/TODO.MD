@@ -85,8 +85,6 @@ router.all('/...', function (req, res, next) {
 })
 ```
 
-### Exercice 3.2
-
 Une fois ces routes créées vous n'avez (presque) aucun moyen de les tester et c'est bien le problème en development, surtout si on crée une API indépendamment d'un frontend.
 
 Pour réaliser des tests et vérifier que notre API est fonctionnelle nous pouvons utiliser un outil appelé [Postman](https://www.postman.com/downloads/), téléchargez le car il sera utile pour tous les TPs ainsi que vos projets. Si vous ne connaissez

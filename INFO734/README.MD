@@ -132,6 +132,8 @@ prom.then(function (value) {
 
 #### Notes de fin de cours
 
+1) *Le faire créer un vrai projet depuis 0 genre avec npm init*
+
 ***
 
 ### [WIP] Séance 4 - CM 3 - 10/21/2022 de 8:00 à 9:30
