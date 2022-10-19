@@ -123,10 +123,11 @@ prom.then(function (value) {
 ### Séance 3 - TP 1 - 10/19/2022 de 13:15 à 17:15
 
 ###### Ce TP est pour vraiment prendre en main le NodeJS avec ExpressJS avec un TP guidé pour créer sa première API pour comprendre une architecture pouvant être utilisée en Fullstack avec Express. Un "corrigé" possible sera émis après le cours
+###### Grâce à ce TP vous pourrez voir comment créer une API, comment utiliser des promesses et faire des requêtes http depuis du code avec la library `axios`.
 
 #### Cheminement de la séance
 
-1) *Lancement du projet* **TP1-1** *pour voir l'architecture d'une API avec l'encadrant*
+1) *Lancement du projet* **TP1-1** *pour voir l'architecture d'une API (simple) avec l'encadrant*
 2) *Mise à jour du projet* **TP1-1** *avec la consigne dans le README.MD et le TODO.MD de ce dernier*
 
 #### Notes de fin de cours
