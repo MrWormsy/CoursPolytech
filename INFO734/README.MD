@@ -56,7 +56,7 @@ Vous serez noté sur :
 
 ***
 
-### [Séance 2 - CM 2 - 10/18/2022 de 13:15 à 14:45](https://github.com/MrWormsy/CoursPolytech/blob/8a16c6794b7b08029e36d3adf181014150056f7d/INFO734/Cours/CM2/INFO%20734%20-%20CM%20-%202.pdf):
+### [Séance 2 - CM 2 - 10/18/2022 de 13:15 à 14:45](https://github.com/MrWormsy/CoursPolytech/blob/03b19ab9d659832308a899a4412c12051e4c65df/INFO734/Cours/CM2/INFO%20734%20-%20CM%20-%202.pdf):
 
 ###### La deuxième séance sera la présentation de ce qu'est la programmation Fullstack par des exemples et de ma manipulation. Plusieurs façons de faire du Fullstack seront présentées, mais le NodeJS avec Express et EJS seront la priorité.
 
@@ -114,22 +114,20 @@ prom.then(function (value) {
 
 #### Notes de fin de cours
 
-- Le cours est pas assez long
-- Enseigner Docker et comment utiliser Docker, car ils connaissent un peu la théorie, mais pas de pratique
+- Le cours n'est pas assez long
+- Enseigner Docker et comment utiliser Docker, car ils connaissent un peu la théorie, mais pas assez de pratique
 - Essayer d'introduire les promesses
 
 ***
 
 ### Séance 3 - TP 1 - 10/19/2022 de 13:15 à 17:15
 
-###### Ce TP est pour vraiment prendre en main le NodeJS avec des petits exercices en node, puis l'utilisation d'un projet "dummy" pour comprendre une architecture pouvant être utilisée en Fullstack avec Express. Puis création de sa propre image Docker.
+###### Ce TP est pour vraiment prendre en main le NodeJS avec ExpressJS avec un TP guidé pour créer sa première API pour comprendre une architecture pouvant être utilisée en Fullstack avec Express. Un "corrigé" possible sera émis après le cours
 
 #### Cheminement de la séance
 
-1) *Installation de Docker et utilisation de docker-compose pour avoir un environnement sain et collectif de travail*
-2) *Petits exercices en NodeJS depuis l'environnement Docker*
-3) *Lancement du projet* **TP1-1** *pour voir l'architecture Fullstack d'un projet avec l'encadrant*
-4) *Mise à jour du projet* **TP1-1** *avec la consigne dans le README.MD de ce dernier*
+1) *Lancement du projet* **TP1-1** *pour voir l'architecture d'une API avec l'encadrant*
+2) *Mise à jour du projet* **TP1-1** *avec la consigne dans le README.MD et le TODO.MD de ce dernier*
 
 #### Notes de fin de cours
 

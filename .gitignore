@@ -3,9 +3,10 @@
 **/node_modules/
 **/HIDDEN.MD
 
+**/*_Done
+
 # Exclude some folders
 /INFO734/Cours/CM3
-/INFO734/TPs/TP1
 /INFO734/Cours/TD1
 
 # Exclude some folders
