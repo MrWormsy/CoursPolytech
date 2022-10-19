@@ -157,6 +157,8 @@ prom.then(function (value) {
 
 1) *Regarder, comprendre et manipuler les projets dans* **TD1-1**, **TD1-2**, **TD1-3**
 2) *Regarder, comprendre et manipuler le projet dans* **TD1-4** *et ajouter ce qui est demandé dans le README.MD de ce dernier*
+3) *Création d'un Dockerfile pour les projets **TD1-1**, **TD1-2**, **TD1-3** & **TD1-4***
+4) *Utilisation d'un docker-compose pour déployer ces projets*
 
 #### Notes de fin de cours
 
@@ -176,9 +178,9 @@ prom.then(function (value) {
 
 ###### /!\ Attention je serai aux USA pour cette séance, donc visio /!\
 
-###### Mini cours de comment utiliser GIT pour le projet, qui sera un aspect de la note du projet !
+###### Mini cours de comment utiliser `GIT` pour le projet, qui sera un aspect de la note du projet !
 
-###### Mini présentation de Trello pour la gestion de projet qui sera un aspect de la note du projet
+###### Mini présentation de `Github Projects` pour la gestion de projet qui sera un aspect de la note du projet
 
 ###### Présentation des projets à réaliser en "groupe" de 1 à 3 et création de nouveaux projets s'il y a d'autres idées. Le but de ce projet est que l'étudiant comprenne comment un projet se structure et se suit en étant seul ou en équipe.
 
@@ -201,6 +203,8 @@ prom.then(function (value) {
 ***
 
 ### [WIP] Séance 9 - CM 5 - 11/29/2022 de 14:30 à 16:00
+
+###### /!\ Attention je serai aux USA pour cette séance, donc visio /!\
 
 ##### Séance de mi-projet avec une mini présentation de ce que vous avez fait, des problèmes rencontrés et ce que devrez encore faire
 
