@@ -13,8 +13,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // On veut ouvrir des routes sur la route principale "/"
-app.use('/api', indexRouter);
-app.use('/user', );
+app.use('/', indexRouter);
 
 // Le port de l'API
 const port = 3000;

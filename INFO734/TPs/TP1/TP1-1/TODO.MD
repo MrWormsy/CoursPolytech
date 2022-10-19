@@ -131,8 +131,7 @@ Sachant cela, maintenant faites en sorte que les endpoints
 
 - `/api/get` Renvoie non plus une chaîne de caractère quelconque, mais une représentation hexadécimale d'un paramètre qui viendra s'ajouter à l'endpoint et que vous nommerez comme bon vous semble
 - `/api/delete` Renvoie non plus un boolean en fonction du nombre de secondes au moment de l'appel, mais `undefined` si le paramètre qui viendra s'ajouter à l'endpoint ne peut pas être une représentation d'un nombre, `true` si le paramètre peut être
-  traduit comme un nombre pair et `false` si le paramètre peut être traduit comme un nombre impair. Le paramètre pourra être nommé comme bon vous semble, attention à la conversion d'une string en nombre, une solution possible serait d'utiliser
-  des [try/catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch).
+  traduit comme un nombre pair et `false` si le paramètre peut être traduit comme un nombre impair. Le paramètre pourra être nommé comme bon vous semble, attention à la conversion d'une string en nombre.
 
 ### Exercice 3.5
 
@@ -170,7 +169,7 @@ On peut par exemple tester ce body dans notre requête Postman et on aura comme 
 Sachant cela, maintenant faites en sorte que les endpoints
 
 - `/api/post` Renvoie non plus un object quelconque dans un object quelconque, mais un object qui a les clefs qui deviennent les valeurs et les valeurs qui deviennent les clefs (genre `{"a": "b", "c": "d"}` deviendra `{"b": "a", "d": "c"}`)
-- `/api/put` Renvoie non plus la date actuelle sous format "Jour/Mois/Année", mais la représentation d'une date où l'année provient d'un paramètre qui se trouvera dans l'endpoint et le jour et le mois se trouveront dans le body de la requête. Le
+- `/api/put` Renvoie non plus la date actuelle sous format "Jour/Mois/Année", mais la représentation d'une date où l'année provient d'un paramètre qui se trouvera dans l'endpoint sous forme d'un timestamp unix et le jour et le mois se trouveront dans le body de la requête. Le
   format de retour devra être sous la forme "Jour/Mois/Année".
 
 ## Exercice 4
@@ -183,7 +182,7 @@ liens: https://www.pierre-giraud.com/javascript-apprendre-coder-cours/promesse-p
 
 Nous allons faire des appels grâce à une library nommée `axios` https://axios-http.com/fr/docs/intro, vous pouvez dès à présenter l'ajouter au projet via la commande `npm install axios`.
 
-Voici quelques exemples d'utilisation de la library `axios`, vous pouvez créer un fichier nommé `test.js` et mettre le code si dessous dedans. Vous pouvez aussi rajouter une ligne `"test": "node axios.js"` dans le fichier `package.json` dans la
+Voici quelques exemples d'utilisation de la library `axios`, vous pouvez créer un fichier nommé `test.js` et mettre le code si dessous dedans. Vous pouvez aussi rajouter une ligne `"test": "node test.js"` dans le fichier `package.json` dans la
 partie script pour lancer le fichier de script à l'aide de la commande `npm run axios`
 
 ```javascript

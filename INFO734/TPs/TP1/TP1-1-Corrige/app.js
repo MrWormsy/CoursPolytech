@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const http = require('http');
 const indexRouter = require('./routes/api');
+const indexRouterV2 = require('./routes/api.v2');
 
 // On crée l'application express
 const app = express();
@@ -14,7 +15,7 @@ app.use(cookieParser());
 
 // On veut ouvrir des routes sur la route principale "/"
 app.use('/api', indexRouter);
-app.use('/user', );
+app.use('/v2/api', indexRouterV2);
 
 // Le port de l'API
 const port = 3000;

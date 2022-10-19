@@ -19,5 +19,38 @@ router.get('/me', function (req, res, next) {
     res.json("Antonin");
 });
 
+router.get('/get', function (req, res, next) {
+    res.json("Antonin");
+})
+
+router.post('/post', function (req, res, next) {
+    res.json({
+        key1: {
+            key2: {
+                key3: {
+                    key4: "Hello"
+                }
+            }
+        }
+    });
+})
+
+router.put('/put', function (req, res, next) {
+    const theDate = new Date();
+    res.json(`${theDate.getDate()}/${theDate.getMonth()}/${theDate.getFullYear()}`)
+})
+
+router.delete('/delete', function (req, res, next) {
+    res.json(Date.now() % 2 === 0)
+})
+
+// Le paramètre ou slug peut avoir à peu près n'importe quel nom
+// et doit être forcement précédé de ': puis une chaine de caractère sans espaces
+router.get('/etudiant/:numEtu', function (req, res, next) {
+    // Pour accèder au paramètre on peut le retrouver directement dans les
+    // paramètres de la requête
+    res.json(`Le numéro étudiant est récupéré et est: ${req.params.numEtu}`);
+});
+
 // Utilisé pour exporter le router comme module
 module.exports = router;
