@@ -53,7 +53,7 @@ Vous allez maintenant construire des routes d'API un peu plus complexes. Avec Ex
 - `/api/get` en méthode HTTP **GET** qui renvoie une chaine de caractères quelconque
 - `/api/post` en méthode HTTP **POST** qui renvoie un object quelconque dans un object quelconque
 - `/api/put` en méthode HTTP **PUT** qui renvoie la date actuelle sous format "Jour/Mois/Année" (regardez sur internet comment faire)
-- `/api/delete` en méthode HTTP **DELETE** qui renvoie un boolean `true` si le nombre de secondes au moment de l'appel est pair et `false` sinon
+- `/api/delete` en méthode HTTP **DELETE** qui renvoie un boolean `true` si le nombre de secondes (ou millisecondes) au moment de l'appel est pair et `false` sinon
 
 Voilà comment utiliser les autres méthodes HTTP
 
@@ -130,7 +130,7 @@ router.get('/etudiant/:numEtu', function (req, res, next) {
 Sachant cela, maintenant faites en sorte que les endpoints
 
 - `/api/get` Renvoie non plus une chaîne de caractère quelconque, mais une représentation hexadécimale d'un paramètre qui viendra s'ajouter à l'endpoint et que vous nommerez comme bon vous semble
-- `/api/delete` Renvoie non plus un boolean en fonction du nombre de secondes au moment de l'appel, mais `undefined` si le paramètre qui viendra s'ajouter à l'endpoint ne peut pas être une représentation d'un nombre, `true` si le paramètre peut être
+- `/api/delete` Renvoie non plus un boolean en fonction du nombre de secondes au moment de l'appel, mais `null` si le paramètre qui viendra s'ajouter à l'endpoint ne peut pas être une représentation d'un nombre, `true` si le paramètre peut être
   traduit comme un nombre pair et `false` si le paramètre peut être traduit comme un nombre impair. Le paramètre pourra être nommé comme bon vous semble, attention à la conversion d'une string en nombre.
 
 ### Exercice 3.5
@@ -169,7 +169,8 @@ On peut par exemple tester ce body dans notre requête Postman et on aura comme 
 Sachant cela, maintenant faites en sorte que les endpoints
 
 - `/api/post` Renvoie non plus un object quelconque dans un object quelconque, mais un object qui a les clefs qui deviennent les valeurs et les valeurs qui deviennent les clefs (genre `{"a": "b", "c": "d"}` deviendra `{"b": "a", "d": "c"}`)
-- `/api/put` Renvoie non plus la date actuelle sous format "Jour/Mois/Année", mais la représentation d'une date où l'année provient d'un paramètre qui se trouvera dans l'endpoint sous forme d'un timestamp unix et le jour et le mois se trouveront dans le body de la requête. Le
+- `/api/put` Renvoie non plus la date actuelle sous format "Jour/Mois/Année", mais la représentation d'une date où l'année provient d'un paramètre qui se trouvera dans l'endpoint sous forme d'un timestamp unix et le jour et le mois se trouveront dans
+  le body de la requête. Le
   format de retour devra être sous la forme "Jour/Mois/Année".
 
 ## Exercice 4
@@ -330,7 +331,7 @@ N'oubliez pas d'utiliser Postman pour tester vos requêtes !!!
 
 Faites en sorte de créer un middleware Express https://expressjs.com/en/guide/writing-middleware.html qui va décortiquer l'anatomie de TOUS les endpoints que vous avez implémenté. Pour finalement avoir un object "printé" à chaque appel :
 
-L'anatomie peut être retrouvée en haut du fichier
+L'anatomie peut être retrouvée dans l'image en haut du fichier, le fragment ne sera jamais présent dans une requête HTTP car il est uniquement accessible dans un navigateur.
 
 ```json
 {
@@ -340,7 +341,6 @@ L'anatomie peut être retrouvée en haut du fichier
   "topLevelDomain": "",
   "port": "",
   "path": "",
-  "queryString": "",
-  "fragment": ""
+  "queryString": ""
 }
 ```

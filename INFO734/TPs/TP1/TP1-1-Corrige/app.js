@@ -2,8 +2,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const http = require('http');
-const indexRouter = require('./routes/api');
-const indexRouterV2 = require('./routes/api.v2');
+const apiRouter = require('./routes/api');
+const apiRouterV2 = require('./routes/api.v2');
 
 // On crée l'application express
 const app = express();
@@ -13,9 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 
-// On veut ouvrir des routes sur la route principale "/"
-app.use('/api', indexRouter);
-app.use('/v2/api', indexRouterV2);
+// On veut ouvrir des routes sur la route principale "/api"
+app.use('/api', apiRouter);
+
+// J'ai ajouté une deuxième route principale "/v2/api" pour pouvoir avoir deux versions de mon API pour les différentes parties du TP
+app.use('/v2/api', apiRouterV2);
 
 // Le port de l'API
 const port = 3000;
