@@ -40,11 +40,11 @@ Maintenant si vous allez sur http://localhost:3000/me, votre nom apparaîtra et 
 ![](https://cascadingmedia.com/assets/images/insites/2015/02/url-anatomy/url-anatomy-55598c24.png)
 Maintenant que vous avez créé une nouvelle route vous allez faire changer la "route principale" du router (le `/` défini dans le fichier `app.js`) pour qu'on puisse avoir accès aux routes du fichier `api.js` non plus par `/` mais par `/api`.
 
-En faisant ça vous allez changer le "path" ou "endpoint" de votre API et donc vous allez faire des choses un peu plus complexes.
+En faisant ça vous allez changer le "path" ou "user" de votre API et donc vous allez faire des choses un peu plus complexes.
 
 Vous pouvez donc maintenant avoir accès à http://localhost:3000/api et http://localhost:3000/api/me.
 
-Il faut garder à l'esprit cette notion d'endpoint qui commence forcément par `/api` pour les API pour que votre projet soit bien structuré.
+Il faut garder à l'esprit cette notion d'user qui commence forcément par `/api` pour les API pour que votre projet soit bien structuré.
 
 ### Exercice 3.1
 
@@ -68,7 +68,7 @@ router.delete('/...', function (req, res, next) {
 })
 ```
 
-Notez qu'il est aussi possible de faire comme ça avec router.all qui capturera TOUTES les méthodes HTTP sur l'endpoint demandé (GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE)
+Notez qu'il est aussi possible de faire comme ça avec router.all qui capturera TOUTES les méthodes HTTP sur l'user demandé (GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE)
 
 ```javascript
 router.all('/...', function (req, res, next) {
@@ -109,7 +109,7 @@ Il y a plusieurs façons de faire transiter de la donnée avec le protocol HTTP 
 
 ### Exercice 3.4
 
-Faire transiter de la donnée directement dans l'URL pour toutes les méthodes HTTP à l'aide d'un **paramètre** ou **slug**. Pour après utiliser cet endpoint il faudra renseigner le paramètre directement dans l'URL du genre :
+Faire transiter de la donnée directement dans l'URL pour toutes les méthodes HTTP à l'aide d'un **paramètre** ou **slug**. Pour après utiliser cet user il faudra renseigner le paramètre directement dans l'URL du genre :
 
 - http://localhost:3000/api/etudiant/12345
 - http://localhost:3000/api/etudiant/pasunnombre
@@ -127,10 +127,10 @@ router.get('/etudiant/:numEtu', function (req, res, next) {
 });
 ```
 
-Sachant cela, maintenant faites en sorte que les endpoints
+Sachant cela, maintenant faites en sorte que les users
 
-- `/api/get` Renvoie non plus une chaîne de caractère quelconque, mais une représentation hexadécimale d'un paramètre qui viendra s'ajouter à l'endpoint et que vous nommerez comme bon vous semble
-- `/api/delete` Renvoie non plus un boolean en fonction du nombre de secondes au moment de l'appel, mais `null` si le paramètre qui viendra s'ajouter à l'endpoint ne peut pas être une représentation d'un nombre, `true` si le paramètre peut être
+- `/api/get` Renvoie non plus une chaîne de caractère quelconque, mais une représentation hexadécimale d'un paramètre qui viendra s'ajouter à l'user et que vous nommerez comme bon vous semble
+- `/api/delete` Renvoie non plus un boolean en fonction du nombre de secondes au moment de l'appel, mais `null` si le paramètre qui viendra s'ajouter à l'user ne peut pas être une représentation d'un nombre, `true` si le paramètre peut être
   traduit comme un nombre pair et `false` si le paramètre peut être traduit comme un nombre impair. Le paramètre pourra être nommé comme bon vous semble, attention à la conversion d'une string en nombre.
 
 ### Exercice 3.5
@@ -152,7 +152,7 @@ router.post('/etudiant', function (req, res, next) {
 });
 ```
 
-On pourrait évidement utiliser un formulaire HTML pour requêter cet endpoint mais le faire avec Postman est plus simple pour nos tests.
+On pourrait évidement utiliser un formulaire HTML pour requêter cet user mais le faire avec Postman est plus simple pour nos tests.
 
 Pour faire une telle demande avec Postman il faut créer une requête `POST` et dans l'onglet `Body` cocher le text `raw` qui indique qu'on veut envoyer du texte "cru", puis on choisi `JSON` dans le menu déroulant à la place de `Text` pour indiquer que
 l'on veut envoyer du JSON et que le body ait les données que l'on veut envoyer en lui.
@@ -166,10 +166,10 @@ On peut par exemple tester ce body dans notre requête Postman et on aura comme 
 }
 ```
 
-Sachant cela, maintenant faites en sorte que les endpoints
+Sachant cela, maintenant faites en sorte que les users
 
 - `/api/post` Renvoie non plus un object quelconque dans un object quelconque, mais un object qui a les clefs qui deviennent les valeurs et les valeurs qui deviennent les clefs (genre `{"a": "b", "c": "d"}` deviendra `{"b": "a", "d": "c"}`)
-- `/api/put` Renvoie non plus la date actuelle sous format "Jour/Mois/Année", mais la représentation d'une date où l'année provient d'un paramètre qui se trouvera dans l'endpoint sous forme d'un timestamp unix et le jour et le mois se trouveront dans
+- `/api/put` Renvoie non plus la date actuelle sous format "Jour/Mois/Année", mais la représentation d'une date où l'année provient d'un paramètre qui se trouvera dans l'user sous forme d'un timestamp unix et le jour et le mois se trouveront dans
   le body de la requête. Le
   format de retour devra être sous la forme "Jour/Mois/Année".
 
@@ -203,7 +203,7 @@ axios.get("http://localhost:3000/api/me").then(function (response) {
 })
 
 /*
-Pour utiliser un endpoint qui possède un ou plusieurs paramètres il faut le renseigner dans l'URL au moment de l'appel
+Pour utiliser un user qui possède un ou plusieurs paramètres il faut le renseigner dans l'URL au moment de l'appel
 Ici l'URL appelée sera http://localhost:3000/api/etudiant/68105105101114
 En lançant ce code vous aurez comme donnée de réponse: "Le numéro étudiant est récupéré et est: 68105105101114"
  */
@@ -224,7 +224,7 @@ axios.post(`http://localhost:3000/api/etudiant`, {nameEtu: nameEtuToCreate, numE
 })
 
 /*
-Si un endpoint n'existe pas ou qu'un serveur est éteint, alors il sera impossible d'accéder à de la donnée et si vous lancez
+Si un user n'existe pas ou qu'un serveur est éteint, alors il sera impossible d'accéder à de la donnée et si vous lancez
 une requête axios comme ça un pavé d'erreur vous arrivera dessus en vous disant que la requête a échoué en erreur 404...
  */
 /*
@@ -254,7 +254,7 @@ Maintenant imaginons que notre API a besoin de récupérer de la donnée depuis 
 const numEtuDeDidier = 68105105101114;
 
 /*
-On crée une nouvelle route qui va appeler l'endpoint `/api/etudiant/:numEtu` de notre API où numEtu sera 68105105101114 pour trouver Didier !
+On crée une nouvelle route qui va appeler l'user `/api/etudiant/:numEtu` de notre API où numEtu sera 68105105101114 pour trouver Didier !
  */
 router.get('/trouverdidier', function (req, res, next) {
 
@@ -297,7 +297,7 @@ router.get('/trouverdidier2', async function (req, res, next) {
 })
 ```
 
-Maintenant que vous savez faire ça vous allez pouvoir créer une route `/api/all` avec la méthode POST (pour donner tous les paramètres dont vos endpoints auront besoin) qui va faire des appels aux 4 routes suivantes : `/api/get/:text`
+Maintenant que vous savez faire ça vous allez pouvoir créer une route `/api/all` avec la méthode POST (pour donner tous les paramètres dont vos users auront besoin) qui va faire des appels aux 4 routes suivantes : `/api/get/:text`
 , `/api/delete/:number`, `/api/post` & `/api/put` et qui renverra un object avec les réponses de chaque API sous la forme :
 
 ```json
@@ -317,7 +317,7 @@ Si vous avez le temps (ou l'envie), vous allez pouvoir créer votre propre API C
 
 Comme vous travaillerez sans base de données pour le moment, vous pouvez juste créer un object "global" qui servira à stocker vous étudiants (soit une liste, soit un object, soit un HashMap, soit une Map bref comme vous voulez).
 
-Vous allez donc créer 5 endpoints :
+Vous allez donc créer 5 users :
 
 - méthode HTTP GET `/api/etudiant/:num` qui vous renverra les données de l'étudiant qui a ce numéro, sinon une erreur
 - méthode HTTP POST `/api/etudiant/` qui va créer un étudiant suivant les informations que vous lui donnerez
@@ -329,7 +329,7 @@ N'oubliez pas d'utiliser Postman pour tester vos requêtes !!!
 
 # Exercice 5.2 (optionnel)
 
-Faites en sorte de créer un middleware Express https://expressjs.com/en/guide/writing-middleware.html qui va décortiquer l'anatomie de TOUS les endpoints que vous avez implémenté. Pour finalement avoir un object "printé" à chaque appel :
+Faites en sorte de créer un middleware Express https://expressjs.com/en/guide/writing-middleware.html qui va décortiquer l'anatomie de TOUS les users que vous avez implémenté. Pour finalement avoir un object "printé" à chaque appel :
 
 L'anatomie peut être retrouvée dans l'image en haut du fichier, le fragment ne sera jamais présent dans une requête HTTP car il est uniquement accessible dans un navigateur.
 

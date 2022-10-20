@@ -13,8 +13,8 @@ function printAnatomy(req, res, next) {
     const hostSplit = req.get("host").split(":");
 
     /*
-    Ici on veut récupérer l'endpoint qui a été appelé, c'est à dire "/api/anatomy" mais comme on a pû lui ajouter un morceau, la queryString ("/api/anatomy?maQuery=123") et bien on coupe cet endpoint en deux
-    Avec .split("?") qui va nous mettre dans une liste l'endpoint a proprement parlé donc "/api/anatomy" et si il y a une query string du genre "?maQuery=123" et bien on récupérera dans la liste à l'indice 1 "maQuery=123"
+    Ici on veut récupérer l'user qui a été appelé, c'est à dire "/api/anatomy" mais comme on a pû lui ajouter un morceau, la queryString ("/api/anatomy?maQuery=123") et bien on coupe cet user en deux
+    Avec .split("?") qui va nous mettre dans une liste l'user a proprement parlé donc "/api/anatomy" et si il y a une query string du genre "?maQuery=123" et bien on récupérera dans la liste à l'indice 1 "maQuery=123"
      */
     const pathSplit = req.originalUrl.split("?");
 
@@ -30,7 +30,7 @@ function printAnatomy(req, res, next) {
         // On veut avoir le port s'il existe, sinon on met undefined, ici 3000
         "port": hostSplit.length > 1 ? +hostSplit[1] : undefined,
 
-        // On veut avoir le path ou l'endpoint, donc "/api/anatomy"
+        // On veut avoir le path ou l'user, donc "/api/anatomy"
         "path": pathSplit[0],
 
         // On veut avoir la query string si elle existe, donc dans notre exemple "maQuery=123"

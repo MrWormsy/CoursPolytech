@@ -132,35 +132,21 @@ prom.then(function (value) {
 
 #### Notes de fin de cours
 
-1) *Le faire créer un vrai projet depuis 0 genre avec npm init*
+- Le faire créer un vrai projet depuis 0 genre avec `npm init`
 
 ***
 
-### [WIP] Séance 4 - CM 3 - 10/21/2022 de 8:00 à 9:30
+### [WIP] Séance 4 et 5 - CM 3 & TD 1 - 10/21/2022 de 8:00 à 9:30 et 9:45 à 11:15
 
-###### Cette séance servira d'introduction aux différentes façons de faire du fullstack. Avec 3 types de backend: Express (js), Echo (go) & Flask (python). Avec 3 types de frontend: EJS avec Express, React & NextJS.
-
-#### Cheminement de la séance
-
-1) *Diaporama pour présenter 3 (backend) API REST avec 3 langages différents*
-2) *Diaporama pour présenter 3 (frontend) Framework en NodeJS*
-3) *Façons de faire transiter la donnée, API REST et Websockets*
-4) *Principe de la session et du compte utilisateur*
-
-#### Notes de fin de cours
-
-***
-
-### [WIP] Séance 5 - TD 1 - 10/21/2022 de 9:45 à 11:15
-
-###### TD pour regarder, manipuler & appréhender NextJS comme frontend et Express, Echo & Flask comme backend. Tout sera fait pas à pas et en interaction avec la classe.
+###### Cette séance servira à créer un projet Fullstack de 0 et d'utiliser Docker et docker-compose pour le déploiement
 
 #### Cheminement de la séance
 
-1) *Regarder, comprendre et manipuler les projets dans* **TD1-1**, **TD1-2**, **TD1-3**
-2) *Regarder, comprendre et manipuler le projet dans* **TD1-4** *et ajouter ce qui est demandé dans le README.MD de ce dernier*
-3) *Création d'un Dockerfile pour les projets **TD1-1**, **TD1-2**, **TD1-3** & **TD1-4***
-4) *Utilisation d'un docker-compose pour déployer ces projets*
+1) *Diaporama pour présenter comment créer une application Fullstack depuis 0*
+2) *Façons de faire transiter la donnée, API REST et Websockets*
+3) *Principe de la session et du compte utilisateur*
+4) *Utilisation de Docker et docker-compose*
+5) *Tutoriel pour créer sa propre API pas à pas dans le fichier Cours/TD1/README.MD*
 
 #### Notes de fin de cours
 

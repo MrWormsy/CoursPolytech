@@ -5,7 +5,7 @@ const axios = require("axios");
 // Cette forme d'import permet d'importer plusieurs éléments en même temps du fichier middlewares
 const {printAnatomy, hello} = require("../middlewares");
 
-// On veut que l'endpoint "/" requêtée avec la méthode HTTP GET nous renvoie de la donnée
+// On veut que l'user "/" requêtée avec la méthode HTTP GET nous renvoie de la donnée
 // req est la requête express où on peut avoir tout un tas d'informations sur les headers, le body de la requête, les cookies ect.
 // res est la réponse express qui sera utilisée pour renvoyer ce qu'on veut et en l'occurrence ici un object json grâce à l'instruction res.json
 // next est une fonction du routeur Express qui, lorsqu'elle est invoquée, exécute le middleware qui succède au middleware actuel. On l'utilisera plus tard
@@ -76,7 +76,7 @@ router.post('/etudiant', function (req, res, next) {
 const numEtuDeDidier = 68105105101114;
 
 /*
-On crée une nouvelle route qui va appeler l'endpoint `/api/etudiant/:numEtu` de notre API où numEtu sera 68105105101114 pour trouver Didier !
+On crée une nouvelle route qui va appeler l'user `/api/etudiant/:numEtu` de notre API où numEtu sera 68105105101114 pour trouver Didier !
  */
 router.get('/trouverdidier', function (req, res, next) {
 
@@ -119,11 +119,11 @@ router.get('/trouverdidier2', async function (req, res, next) {
 })
 
 /*
-Ici je veux appeler les 4 endpoints quand je veux accéder à l'endpoint "/api/all"
+Ici je veux appeler les 4 users quand je veux accéder à l'user "/api/all"
  */
 router.post('/all', async function (req, res, next) {
     try {
-        // On fait l'appel à notre propre API avec axios pour les 4 endpoints
+        // On fait l'appel à notre propre API avec axios pour les 4 users
         // Pour rappel mon body ressemble à ça:
         /*
         {

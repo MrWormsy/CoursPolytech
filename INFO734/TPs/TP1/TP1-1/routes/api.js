@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// On veut que l'endpoint "/" requêtée avec la méthode HTTP GET nous renvoie de la donnée
+// On veut que l'user "/" requêtée avec la méthode HTTP GET nous renvoie de la donnée
 // req est la requête express où on peut avoir tout un tas d'informations sur les headers, le body de la requête, les cookies ect.
 // res est la réponse express qui sera utilisée pour renvoyer ce qu'on veut et en l'occurrence ici un object json grâce à l'instruction res.json
 // next est une fonction du routeur Express qui, lorsqu'elle est invoquée, exécute le middleware qui succède au middleware actuel. On l'utilisera plus tard

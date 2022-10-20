@@ -14,7 +14,7 @@ axios.get("http://localhost:3000/api/me").then(function (response) {
 })
 
 /*
-Pour utiliser un endpoint qui possède un ou plusieurs paramètres il faut le renseigner dans l'URL au moment de l'appel
+Pour utiliser un user qui possède un ou plusieurs paramètres il faut le renseigner dans l'URL au moment de l'appel
 Ici l'URL appelée sera http://localhost:3000/api/etudiant/68105105101114
 En lançant ce code vous aurez comme donnée de réponse: "Le numéro étudiant est récupéré et est: 68105105101114"
  */
@@ -35,7 +35,7 @@ axios.post(`http://localhost:3000/api/etudiant`, {nameEtu: nameEtuToCreate, numE
 })
 
 /*
-Si un endpoint n'existe pas ou qu'un serveur est éteint, alors il sera impossible d'accéder à de la donnée et si vous lancez
+Si un user n'existe pas ou qu'un serveur est éteint, alors il sera impossible d'accéder à de la donnée et si vous lancez
 une requête axios comme ça un pavé d'erreur vous arrivera dessus en vous disant que la requête a échoué en erreur 404...
  */
 /*
@@ -58,7 +58,7 @@ axios.get("http://localhost:3000/api/existepas").then(function (response) {
 })
 
 /*
-Je construis mon object qui va être envoyé via une requête HTPP POST avec les données qui seront utilisé par les 4 endpoints
+Je construis mon object qui va être envoyé via une requête HTPP POST avec les données qui seront utilisé par les 4 users
  */
 const allData = {
     get: "Hello",
@@ -72,7 +72,7 @@ const allData = {
 }
 
 /*
-J'effectue la requête sur l'endpoint "/api/all" avec comme body de la requête l'object allData
+J'effectue la requête sur l'user "/api/all" avec comme body de la requête l'object allData
  */
 axios.post("http://localhost:3000/api/all", allData)
 
