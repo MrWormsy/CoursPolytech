@@ -1,0 +1,74 @@
+version: "3.8"
+
+# Ici on définie les différents services
+services:
+
+  # le service pour la base de données MongoDB que l'on va appeler 'mongo-td1-1'
+  mongo-td1-1:
+
+    # Il utilisera l'image 'mongo' à sa dernière version
+    image: mongo:latest
+
+    # Le container aura comme nom 'mongo-td1-1'
+    container_name: mongo-td1-1
+
+    # Le hostname du container, c'est-à-dire son adresse visible aux autres containers qui seront dans le/les même(s) réseau(x), il sera utilisé pour s'y connecter
+    hostname: mongo-hostname-td1-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-td1-1'
+    networks:
+      - network-td1-1
+
+  # le service pour la base de données Redis que l'on va appeler 'redis-td1-1'
+  redis-td1-1:
+
+    # Il utilisera l'image 'redis' à sa dernière version
+    image: redis:latest
+
+    # Le container aura comme nom 'redis-td1-1'
+    container_name: redis-td1-1
+
+    # Le hostname du container, c'est-à-dire son adresse visible aux autres containers qui seront dans le/les même(s) réseau(x), il sera utilisé pour s'y connecter
+    hostname: redis-hostname-td1-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-td1-1'
+    networks:
+      - network-td1-1
+
+  # le service pour l'API que l'on va appeler 'api-td1-1'
+  api-td1-1:
+
+    # L'image que nous utiliserons est l'image que l'on a créée et qui s'appelle 'info734/td1-1/api'
+    # On lui a donné ce nom grâce à la commande: docker build -t info734/td1-1/api .
+    image: info734/td1-1/api
+
+    # On lui donne comme nom 'api-td1-1'
+    container_name: api-td1-1
+
+    # On veut "mapper" le port 3000 de notre ordinateur (le HOST) vers le port 3000 de l'API (CONTAINER)
+    ports:
+      - "3000:3000"
+
+    # Ce service doit attendre que mongo ET redis aient démarré pour démarrer à son tour
+    depends_on:
+      - mongo-td1-1
+      - redis-td1-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-td1-1'
+    networks:
+      - network-td1-1
+
+    # On veut ajouter deux variables d'environnement à notre container, ce qu'il lui permettra de pouvoir se connecter à MongoDB et Redis en leur donnant leur hostname
+    # Comme la base de données MongoDB s'appelle mongo et la base Redis redis on leur donne ces noms
+    environment:
+      MONGO_HOST: "mongo-hostname-td1-1"
+      REDIS_HOST: "redis-hostname-td1-1"
+
+# Après avoir créé des services, on va créer un réseau interne
+networks:
+
+  # On crée le réseau interne nommé "network-td1-1"
+  network-td1-1:
+
+    # Pour les réseaux internes mettre tout le temps cette instruction, c'est le plus simple et vous n'aurez pas besoin de plus
+    driver: bridge

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test de la websocket avec SocketIO</title>
+</head>
+
+<!-- On importe SocketIO -->
+<script src="https://cdn.socket.io/4.4.1/socket.io.js"></script>
+
+<body>
+
+<h1>Test de SocketIO</h1>
+
+<hr/>
+
+<h1>Etat de la socket:</h1>
+<p id="etatSocket">Pas encore connecté</p>
+
+<hr/>
+
+<h1>Test pour envoyer un événement au serveur et qu'il le retourne seulement à nous</h1>
+<button onclick="envoyerPockPourMoi()">Envoyer un pock à soi-même</button>
+<p>Dernière date de mon pock: <span id="derniereDatePock">Aucun pock</span></p>
+
+<hr/>
+
+<h1>Test pour envoyer un événement au serveur et qu'il le retourne à tous le monde</h1>
+<button onclick="derniereDatePockToutLeMonde()">Envoyer un pock à tout le monde</button>
+<p>Dernière date du pock global: <span id="derniereDatePockToutLeMonde">Aucun pock</span></p>
+
+<hr/>
+
+<h1>Test pour envoyer un message au serveur pour qu'il soit stocké dans Redis</h1>
+<input id="pourEnvoyerDernierMessage" type="text"/>
+<button onclick="envoyerDernierMessage()">Envoyer le dernier message</button>
+<br/>
+<input disabled id="pourRecupererDernierMessage" type="text"/>
+<button onclick="recevoirDernierMessage()">Recevoir le dernier message</button>
+
+<hr/>
+
+</body>
+</html>
+
+<script>
+
+    // On crée la Websocket qui pointe vers notre API
+    const socket = io("http://localhost:3000");
+
+    // Si on reçoit l'événement "est_connecte" du serveur alors on veut changer le status du paragraphe "etatSocket" avec la donnée reçu
+    socket.on("est_connecte", function (data) {
+        document.getElementById("etatSocket").innerHTML = data;
+    });
+
+    // On ajoute un événement de quand on reçois un pock par soi-même, et on met à jour la dernière date du pock avec celle reçus par la websocket
+    socket.on("mon_evenement_bien_recu", function (data) {
+        document.getElementById("derniereDatePock").innerHTML = data;
+    })
+
+    // On ajoute un événement de quand on reçois un pock par un autre utilisateur, et on met à jour la dernière date du pock avec celle reçus par la websocket AVEC l'id de celui qui a lancé le dernier pock
+    socket.on("mon_evenement_pour_tout_le_monde_bien_recu", function (data) {
+        document.getElementById("derniereDatePockToutLeMonde").innerHTML = `Le dernier pock a été lancé le ${data.date} par ${data.id}`;
+    })
+
+    // On ajoute un événement pour mettre à jour le dernier message reçu
+    socket.on("recevoir_dernier_message_reponse", function (data) {
+        document.getElementById("pourRecupererDernierMessage").value = data;
+    })
+
+    /**
+     * Fonction pour m'envoyer un pock à moi-même
+     */
+    function envoyerPockPourMoi() {
+
+        // On va émettre un pock au serveur via la websocket avec la date de maintenant
+        socket.emit("mon_evenement", new Date())
+    }
+
+    /**
+     * Fonction pour envoyer un pock à tout le monde connecté
+     */
+    function derniereDatePockToutLeMonde() {
+
+        // On va émettre un pock au serveur via la websocket avec la date de maintenant
+        socket.emit("mon_evenement_pour_tout_le_monde", new Date())
+    }
+
+    /**
+     * Fonction pour envoyer le dernier message stocké dans Redis
+     */
+    function envoyerDernierMessage() {
+
+        // On va émettre un pock au serveur via la websocket avec la date de maintenant
+        socket.emit("envoyer_dernier_message", document.getElementById("pourEnvoyerDernierMessage").value)
+    }
+
+    /**
+     * Fonction pour recevoir le dernier message stocké dans Redis
+     */
+    function recevoirDernierMessage() {
+
+        // On va émettre un pock au serveur via la websocket avec la date de maintenant. Pas besoin de donner de données si vous n'en avez pas besoin
+        socket.emit("recevoir_dernier_message")
+    }
+</script>
