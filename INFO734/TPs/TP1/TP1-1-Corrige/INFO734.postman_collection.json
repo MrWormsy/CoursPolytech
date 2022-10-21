@@ -1,500 +1,500 @@
 {
-	"info": {
-		"_postman_id": "fde013fd-b8da-47e4-9c4d-8fbb6ed0f4de",
-		"name": "INFO734",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "/api",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/me",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/me",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"me"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/get",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/get",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"get"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/post",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/post",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"post"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/put",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/put",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"put"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/delete",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/delete",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"delete"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/etudiant/:numEtu",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/etudiant/:numEtu",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"etudiant",
-						":numEtu"
-					],
-					"variable": [
-						{
-							"key": "numEtu",
-							"value": "12345"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/get",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/v2/api/get/:param1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"get",
-						":param1"
-					],
-					"variable": [
-						{
-							"key": "param1",
-							"value": "Hello"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/post",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"nameEtu\": \"Didier\",\n  \"numEtu\": 68105105101114\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/v2/api/post",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"post"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/put",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"timestamp\": 100000\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/v2/api/put/:timestamp",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"put",
-						":timestamp"
-					],
-					"variable": [
-						{
-							"key": "timestamp",
-							"value": "10000000000"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/delete",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/v2/api/delete/:param1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"delete",
-						":param1"
-					],
-					"variable": [
-						{
-							"key": "param1",
-							"value": "12"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/all",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"get\": \"Hello\",\n    \"post\": {\n        \"hello\": \"test\",\n        \"bye\": \"no\"\n    },\n    \"putParam\": 1234567890000,\n    \"putBody\": 1234567890,\n    \"delete\": \"1234\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/all",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/trouverdidier",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/trouverdidier",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"trouverdidier"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/trouverdidier2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/trouverdidier2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"trouverdidier2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/etudiant/:num",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/v2/api/etudiant/:num",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"etudiant",
-						":num"
-					],
-					"variable": [
-						{
-							"key": "num",
-							"value": null
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/etudiant",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"nom\": \"TestNom\",\n    \"prenom\": \"TestPrenom\",\n    \"numEtu\": 1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/v2/api/etudiant",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"etudiant"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/etudiant/:num",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"nom\": \"Nouveau nom\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/v2/api/etudiant/:num",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"etudiant",
-						":num"
-					],
-					"variable": [
-						{
-							"key": "num",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/etudiant/:num",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/v2/api/etudiant/:num",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"etudiant",
-						":num"
-					],
-					"variable": [
-						{
-							"key": "num",
-							"value": null
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/v2/api/etudiants",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/v2/api/etudiants",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"v2",
-						"api",
-						"etudiants"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/api/anatomy",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "fde013fd-b8da-47e4-9c4d-8fbb6ed0f4de",
+    "name": "INFO734",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "/api",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/me",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/get",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "get"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/post",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/put",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/put",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "put"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/delete",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/etudiant/:numEtu",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/etudiant/:numEtu",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "etudiant",
+            ":numEtu"
+          ],
+          "variable": [
+            {
+              "key": "numEtu",
+              "value": "12345"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/v2/api/get/:param1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "get",
+            ":param1"
+          ],
+          "variable": [
+            {
+              "key": "param1",
+              "value": "Hello"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nameEtu\": \"Didier\",\n  \"numEtu\": 68105105101114\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/v2/api/post",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/put",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"timestamp\": 100000\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/v2/api/put/:timestamp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "put",
+            ":timestamp"
+          ],
+          "variable": [
+            {
+              "key": "timestamp",
+              "value": "10000000000"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/v2/api/delete/:param1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "delete",
+            ":param1"
+          ],
+          "variable": [
+            {
+              "key": "param1",
+              "value": "12"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/all",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"get\": \"Hello\",\n    \"post\": {\n        \"hello\": \"test\",\n        \"bye\": \"no\"\n    },\n    \"putParam\": 1234567890000,\n    \"putBody\": 1234567890,\n    \"delete\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/trouverdidier",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/trouverdidier",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "trouverdidier"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/trouverdidier2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/trouverdidier2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "trouverdidier2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/etudiant/:num",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/v2/api/etudiant/:num",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "etudiant",
+            ":num"
+          ],
+          "variable": [
+            {
+              "key": "num",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/etudiant",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"nom\": \"TestNom\",\n    \"prenom\": \"TestPrenom\",\n    \"numEtu\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/v2/api/etudiant",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "etudiant"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/etudiant/:num",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"nom\": \"Nouveau nom\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/v2/api/etudiant/:num",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "etudiant",
+            ":num"
+          ],
+          "variable": [
+            {
+              "key": "num",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/etudiant/:num",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/v2/api/etudiant/:num",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "etudiant",
+            ":num"
+          ],
+          "variable": [
+            {
+              "key": "num",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/v2/api/etudiants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/v2/api/etudiants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "v2",
+            "api",
+            "etudiants"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/api/anatomy",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
+    }
+  ]
 }

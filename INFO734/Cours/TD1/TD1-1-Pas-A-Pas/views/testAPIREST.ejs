@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test de l'API REST</title>
+</head>
+
+<!-- On importe Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<body>
+
+<h1>Test de l'API REST</h1>
+
+<hr/>
+
+<h1>Résultat du ping</h1>
+<button onclick="testerLePing()">Tester le ping</button>
+<p id="etatPing">Pas encore testé</p>
+
+<hr/>
+
+<h1>Lire tous les utilisateurs</h1>
+<button onclick="readAllUsers()">Récupérer tous les utilisateurs</button>
+<br/>
+<br/>
+<label>
+    Résultat:
+</label>
+<br/>
+<textarea disabled id="resultatReadAllUsers" style="width: 500px;height: 100px"></textarea>
+
+<hr/>
+
+<h1>Créer un utilisateur</h1>
+<div>
+    <label for="nomCreation">Nom</label>
+    <br/>
+    <input id="nomCreation">
+    <br/>
+    <label for="prenomCreation">Prénom</label>
+    <br/>
+    <input id="prenomCreation">
+    <br/>
+    <label for="ageCreation">Age</label>
+    <br/>
+    <input id="ageCreation" type="number">
+</div>
+<br/>
+<button onclick="createUser()">Créer un utilisateur</button>
+<br/>
+<br/>
+<label>
+    Résultat:
+</label>
+<br/>
+<textarea disabled id="resultatCreateUser" style="width: 500px;height: 100px"></textarea>
+
+<hr/>
+
+<h1>Rechercher un utilisateur</h1>
+<div>
+    <label for="idRead">Id de l'utilisateur</label>
+    <br/>
+    <input id="idRead">
+</div>
+<br/>
+<button onclick="readUser()">Lire un utilisateur</button>
+<br/>
+<br/>
+<label>
+    Résultat:
+</label>
+<br/>
+<textarea disabled id="resultatReadUser" style="width: 500px;height: 100px"></textarea>
+
+<hr/>
+
+<h1>Modifier un utilisateur</h1>
+<div>
+    <label for="idUpdate">Id de l'utilisateur à modifier</label>
+    <br/>
+    <input id="idUpdate">
+    <br/>
+    <br/>
+    <br/>
+    <label for="nomUpdate">Nom</label>
+    <br/>
+    <input id="nomUpdate">
+    <br/>
+    <label for="prenomUpdate">Prénom</label>
+    <br/>
+    <input id="prenomUpdate">
+    <br/>
+    <label for="ageUpdate">Age</label>
+    <br/>
+    <input id="ageUpdate" type="number">
+    <br/>
+</div>
+<br/>
+<button onclick="updateUser()">Modifier un utilisateur</button>
+<br/>
+<br/>
+<label>
+    Résultat:
+</label>
+<br/>
+<textarea disabled id="resultatUpdateUser" style="width: 500px;height: 100px"></textarea>
+
+<hr/>
+
+<h1>Supprimer un utilisateur</h1>
+<div>
+    <label for="idDelete">Id de l'utilisateur à supprimer</label>
+    <br/>
+    <input id="idDelete">
+</div>
+<br/>
+<button onclick="deleteUser()">Supprimer un utilisateur</button>
+<br/>
+<br/>
+<label>
+    Résultat:
+</label>
+<br/>
+<textarea disabled id="resultatDeleteUser" style="width: 500px;height: 100px"></textarea>
+
+<hr/>
+
+<h1>Session utilisateur</h1>
+<button onclick="recupererLaSession()">Récupérer le contenu de la session</button>
+<button onclick="detruireLaSession()">Détruire la session</button>
+<br/>
+<br/>
+<label>
+    Résultat:
+</label>
+<br/>
+<textarea disabled id="resultatSession" style="width: 500px;height: 100px"></textarea>
+
+<hr/>
+
+</body>
+</html>
+
+<script>
+
+    /**
+     * On veut tester le ping
+     */
+    function testerLePing() {
+
+        // On utilise axios pour faire une requête get au serveur et ainsi récupérer la réponse
+        axios.get("http://localhost:3000/api/ping").then(function (response) {
+
+            // On modifie la valeur du paragraph "etatPing" avec la donnée de la réponse en parsé en chaine de caractère, si on ne met pas
+            // JSON.stringify(response.data) mais que response.data on aura juste ça comme réponse "[object Object]"...
+            document.getElementById("etatPing").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * On veut lire tous les utilisateurs et mettre le résultat dans le champ associé
+     */
+    function readAllUsers() {
+        axios.get("http://localhost:3000/api/users").then(function (response) {
+            document.getElementById("resultatReadAllUsers").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * On veut créer un utilisateur et mettre le résultat dans le champ associé
+     */
+    function createUser() {
+
+        // On récupère les données de l'utilisateur à créer
+        const nom = document.getElementById("nomCreation").value;
+        const prenom = document.getElementById("prenomCreation").value;
+        const age = document.getElementById("ageCreation").value;
+
+        axios.post("http://localhost:3000/api/user", {nom: nom, prenom: prenom, age: age}).then(function (response) {
+            document.getElementById("resultatCreateUser").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * On veut lire un utilisateur et mettre le résultat dans le champ associé
+     */
+    function readUser() {
+
+        // On récupère l'id de l'utilisateur
+        const userId = document.getElementById("idRead").value;
+
+        axios.get(`http://localhost:3000/api/user/${userId}`).then(function (response) {
+            document.getElementById("resultatReadUser").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * On veut modifier un utilisateur et mettre le résultat dans le champ associé
+     */
+    function updateUser() {
+
+        // On récupère l'id de l'utilisateur
+        const userId = document.getElementById("idUpdate").value;
+
+        // On récupère les données de l'utilisateur à modifier
+        const nom = document.getElementById("nomUpdate").value;
+        const prenom = document.getElementById("prenomUpdate").value;
+        const age = document.getElementById("ageUpdate").value;
+
+        axios.put(`http://localhost:3000/api/user/${userId}`, {nom: nom, prenom: prenom, age: age}).then(function (response) {
+            document.getElementById("resultatUpdateUser").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * On veut supprimer un utilisateur et mettre le résultat dans le champ associé
+     */
+    function deleteUser() {
+
+        // On récupère l'id de l'utilisateur
+        const userId = document.getElementById("idDelete").value;
+
+        axios.delete(`http://localhost:3000/api/user/${userId}`).then(function (response) {
+            document.getElementById("resultatDeleteUser").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * Fonction pour récupérer ce qui se trouve dans la session
+     */
+    function recupererLaSession() {
+        axios.get("http://localhost:3000/api/session").then(function (response) {
+            document.getElementById("resultatSession").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+    /**
+     * Fonction pour détruire la session
+     */
+    function detruireLaSession() {
+        axios.delete("http://localhost:3000/api/session").then(function (response) {
+            document.getElementById("resultatSession").innerHTML = JSON.stringify(response.data);
+        })
+    }
+
+</script>
