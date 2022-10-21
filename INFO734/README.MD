@@ -136,7 +136,7 @@ prom.then(function (value) {
 
 ***
 
-### [WIP] [Séance 4 et 5 - CM 3 & TD 1 - 10/21/2022 de 8:00 à 9:30 et 9:45 à 11:15](https://github.com/MrWormsy/CoursPolytech/blob/de22338b17953413a3aa3ba2c21fc6e6ef286d84/INFO734/Cours/CM3/INFO%20734%20-%20CM%20-%203.pdf)
+### [Séance 4 et 5 - CM 3 & TD 1 - 10/21/2022 de 8:00 à 9:30 et 9:45 à 11:15](https://github.com/MrWormsy/CoursPolytech/blob/de22338b17953413a3aa3ba2c21fc6e6ef286d84/INFO734/Cours/CM3/INFO%20734%20-%20CM%20-%203.pdf)
 
 ###### Cette séance servira à créer un projet Fullstack de 0 et d'utiliser Docker et docker-compose pour le déploiement
 
