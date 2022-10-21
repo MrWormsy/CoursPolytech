@@ -285,7 +285,7 @@ Pour le moment ces fonctions sont vides, mais on va vite les remplir !
 
 ## Etape #6 - Ajout des controllers
 
-Nous allons importer et appeler les fonctions créées dans le fichier `controllers/users.js` dans le fichier `routes.js`
+Nous allons importer et appeler les fonctions créées dans le fichier `controllers/users.js` dans le fichier `routes/api.js`
 
 ```javascript
 const express = require("express");
