@@ -1,0 +1,100 @@
+version: "3.8"
+
+# Ici on définie les différents services
+services:
+
+  # le service pour la base de données MongoDB que l'on va appeler 'mongo-tp2-1'
+  mongo-tp2-1:
+
+    # Il utilisera l'image 'mongo' à sa dernière version
+    image: mongo:latest
+
+    # Le container aura comme nom 'mongo-tp2-1'
+    container_name: mongo-tp2-1
+
+    # Le hostname du container, c'est-à-dire son adresse visible aux autres containers qui seront dans le/les même(s) réseau(x), il sera utilisé pour s'y connecter
+    hostname: mongo-hostname-tp2-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-tp2-1'
+    networks:
+      - network-tp2-1
+
+  # le service pour la base de données Redis que l'on va appeler 'redis-tp2-1'
+  redis-tp2-1:
+
+    # Il utilisera l'image 'redis' à sa dernière version
+    image: redis:latest
+
+    # Le container aura comme nom 'redis-tp2-1'
+    container_name: redis-tp2-1
+
+    # Le hostname du container, c'est-à-dire son adresse visible aux autres containers qui seront dans le/les même(s) réseau(x), il sera utilisé pour s'y connecter
+    hostname: redis-hostname-tp2-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-tp2-1'
+    networks:
+      - network-tp2-1
+
+  # le service pour l'API que l'on va appeler 'api-tp2-1'
+  api-tp2-1:
+
+    # L'image que nous utiliserons est l'image que l'on a créée et qui s'appelle 'info734/tp2-1/api'
+    # On lui a donné ce nom grâce à la commande: docker build -t info734/tp2-1/api .
+    image: info734/tp2-1/api
+
+    # On lui donne comme nom 'api-tp2-1'
+    container_name: api-tp2-1
+
+    # On veut "mapper" le port 3000 de notre ordinateur (le HOST) vers le port 80 de l'API (CONTAINER)
+    ports:
+      - "3000:80"
+
+    # Ce service doit attendre que mongo ET redis aient démarré pour démarrer à son tour
+    depends_on:
+      - mongo-tp2-1
+      - redis-tp2-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-tp2-1'
+    networks:
+      - network-tp2-1
+
+    # On veut ajouter deux variables d'environnement à notre container, ce qu'il lui permettra de pouvoir se connecter à MongoDB et Redis en leur donnant leur hostname
+    # Comme la base de données MongoDB s'appelle mongo et la base Redis redis on leur donne ces noms
+    # On veut aussi que le port de notre API soit rendu sur le port 80
+    environment:
+      MONGO_HOST: "mongo-hostname-tp2-1"
+      REDIS_HOST: "redis-hostname-tp2-1"
+      PORT: "80"
+
+  # le service pour le site web que l'on va appeler 'website-tp2-1'
+  website-tp2-1:
+
+    # L'image que nous utiliserons est l'image que l'on a créée et qui s'appelle 'info734/tp2-1/website'
+    # On lui a donné ce nom grâce à la commande: docker build --build-arg BACKEND_URL=api-tp2-1:80 -t info734/tp2-1/website .
+    image: info734/tp2-1/website
+
+    # On lui donne comme nom 'website-tp2-1'
+    container_name: website-tp2-1
+
+    # On veut "mapper" le port 8080 de notre ordinateur (le HOST) vers le port 8080 du website (CONTAINER)
+    ports:
+      - "8080:8080"
+
+    # Ce service doit attendre que mongo, redis ET l'API aient démarré pour démarrer à son tour
+    depends_on:
+      - mongo-tp2-1
+      - redis-tp2-1
+      - api-tp2-1
+
+    # Il fera partie d'un seul réseau interne nommé 'network-tp2-1'
+    networks:
+      - network-tp2-1
+
+# Après avoir créé des services, on va créer un réseau interne
+networks:
+
+  # On crée le réseau interne nommé "network-tp2-1"
+  network-tp2-1:
+
+    # Pour les réseaux internes mettre tout le temps cette instruction, c'est le plus simple et vous n'aurez pas besoin de plus
+    driver: bridge
