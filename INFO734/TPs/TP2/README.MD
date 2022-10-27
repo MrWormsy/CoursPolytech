@@ -801,6 +801,8 @@ apiRouter.post('/message', isUserAuthenticated, isSuperUser, async (req, res) =>
 app.use('/api', apiRouter);
 ```
 
+ATTENTION, SI VOUS AVEZ DES PROBLEMES AVEC REDIS VEUILLEZ RECUPERER L'API dans `TP2-1-Pas-A-Pas-Sans-Redis/tp2-1-api` qui n'utilisera pas Redis mais que MongoDB !
+
 Maintenant vous pouvez un peu vous amuser avec Postman pour voir si cela fonctionne, et n'oubliez pas d'allumer votre serveur avec la commande `npm run dev` !
 
 Pour vous connecter avec Postman vous allez devoir utiliser une fonction spéciale de se connecter : https://learning.postman.com/docs/sending-requests/authorization/#basic-auth. Si vous avez des questions je pourrai y répondre. 
