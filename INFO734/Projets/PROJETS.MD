@@ -52,4 +52,11 @@ Création d'une application Fullstack pour commander des Pizzas (ou autre) en é
 6) Optionnel : Vous pouvez faire des stats sur la pizza la plus achetée ou faire un système de recommandation
 
 ##### **[#6]** - *Complexe* - Faire un système de ticket de support avec notifications
-Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin
+Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin pourra actualiser et mettre à jour. Dès que le status d'un ticket est mis à jour alors une notification est envoyé à l'utilisateur.
+
+1) Gestion de compte utilisateur avec mot de passe et avec session
+2) Avoir des permissions sur les utilisateurs ou groupes pour pouvoir gérer les utilisateurs si besoin
+3) Créer une interface pour créer un ticket avec au minimum les champs suivants : `titre`, `description`, `status`, `priorité`, `type` et `dateDeCreation`
+4) Créer une interface pour visualiser SEULEMENT ses tickets ou tous les tickets si on est un admin
+5) Créer une interface pour mettre à jour l'état d'un ticket
+6) Optionnel : Vous pouvez utiliser SocketIO pour envoyer des notifications à l'utilisateur qui a créé le ticket si son état a changé et des notifications à l'administrateur pour chaque mise à jour de ticket et lors de la création de ticket

@@ -820,7 +820,7 @@ npx create-next-app@latest
 Vous pouvez supprimer le fichier `.eslintrc.json` qui est le fichier de configuration pour le "linter", qui est en quelque chose le policier qui vous dira si votre code est propre et conforme à la norme, mais on va le supprimer pour le moment, car il
 va plus nous embetter qu'autres choses...
 
-Vous avez créé votre premier projet NextJS, félicitations ! Pour le démarrer vous devez lancer la commande `npm run build`.
+Vous avez créé votre premier projet NextJS, félicitations ! Pour le démarrer vous devez lancer la commande `npm run dev`.
 
 Comme le port par défaut de NextJS est 3000 il vous dira qu'il n'a pas pu lancer le serveur à ce port-là, pas de panique, on va faire en sorte de le lancer à un autre port en modifiant le fichier `package.json`
 
