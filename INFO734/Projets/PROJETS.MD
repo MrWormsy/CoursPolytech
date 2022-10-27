@@ -1,6 +1,7 @@
 # Projets INFO 734
 
 #### Notes
+
 /!\ Attention de ne pas laisser les clefs d'API trainer dans votre code, il faut utiliser le package `dotenv` pour créer des fichiers `.env` et ainsi ne pas divulguer des informations sensibles /!\
 
 Vous devrez utiliser Github ou Gitlab pour votre projet qui sera en public et vous m'enverrez un mail à l'adresse suivante `antonin.martin.rosa@gmail.com` avec le lien de votre repository Git pour que je puisse regarder ce que vous faites.
@@ -13,12 +14,20 @@ Vous devrez utiliser Github Project ou Trello pour faire de la gestion de projet
 
 ##### **[#1]** - *Complexe* - Visualisation sous forme de dashboard d'une capture Stream Twitter
 
+Création d'un projet qui permet de récupérer des tweets via l'API de Twitter en mode streaming sur un sujet, il y aura un engine pour la collecte de tweet qui opérera sur le backend ou sur une autre application. Ces tweets seront stockés dans une
+base de données et vous pourrez les retrouver via une interface.
+
+Puis en rapport avec le projet de DATA732 vous allez créer un dashboard qui montrera les données de Twitter sous forme de diagrammes, de nuages de mots, de courbes et pourquoi pas de graphs en temps réel. Si vous avez des questions je peux vous
+aiguiller.
+
 1) Capture Twitter depuis son compte sur un mot clef
 2) Création d'un dashboard pertinent pour montrer ces données
 3) Utilisation d'une base de données "froide" pour persister les données
 4) Utilisation d'une websocket (genre SocketIO) pour envoyer les données récupérées lors d'une stream vers le dashboard
 
 ##### **[#2]** - *Intermédiaire* - Création d'un système de message, style messenger avec gestion de compte utilisateur
+
+Application pour créer un système de messagerie où un ou plusieurs utilisateurs peuvent discuter dans des salons (utiliser le principe de rooms pour SocketIO). Faire un replica de Facebook Messenger...
 
 1) Gestion de compte utilisateur (avec ou sans mot de passe) avec session
 2) Il sera possible de récupérer une conversation entre un OU plusieurs utilisateurs à l'aide d'une base de données "froide" pour persister les données
@@ -27,14 +36,19 @@ Vous devrez utiliser Github Project ou Trello pour faire de la gestion de projet
 
 ##### **[#3]** - *Intermédiaire* - Créer un replica de stackoverflow (ou reddit ou twitter) qui utilise un système de threads avec des commentaires, comme un forum
 
+Application pour créer un forum qui est composé d'un sujet ou thread et où des utilisateurs peuvent y répondre avec des commentaires, ils peuvent aussi les modifier ou les supprimer.
+
 1) Gestion de compte utilisateur avec mot de passe et avec session
 2) Avoir des permissions sur les utilisateurs ou groupes pour pouvoir gérer les utilisateurs si besoin
 3) Faire en sorte de pouvoir créer des threads avec un titre et une description
 4) Des utilisateurs pourront commenter sous ces threads et réagir
-5) Si possible utiliser SocketIO pour notifier l'utilisateur que quelqu'un a répondu à son thread ou à son commentaire 
- 
+5) Si possible utiliser SocketIO pour notifier l'utilisateur que quelqu'un a répondu à son thread ou à son commentaire
+
 ##### **[#4]** - *facile* - Créer un site de statistiques sur des chaines Youtube
-Application pour récupérer des informations (celles que vous voulez) sur des chaines Youtube (que les vidéos dans un premier temps) grâce à l'API de Youtube et montrer ces informations sous la forme qui vous conviendra le mieux (dashboard, tableau, ect). Les données récupérées doivent être persistées dans une base de données pour ne pas devoir refaire des requêtes. Les requêtes et les traitements associés doivent tourner en arrière-plan quand on demande une requête. Vous pouvez créer un système de status pour savoir quelles sont les chaînes en cours de traitement.
+
+Application pour récupérer des informations (celles que vous voulez) sur des chaines Youtube (que les vidéos dans un premier temps) grâce à l'API de Youtube et montrer ces informations sous la forme qui vous conviendra le mieux (dashboard, tableau,
+ect). Les données récupérées doivent être persistées dans une base de données pour ne pas devoir refaire des requêtes. Les requêtes et les traitements associés doivent tourner en arrière-plan quand on demande une requête. Vous pouvez créer un système
+de status pour savoir quelles sont les chaînes en cours de traitement.
 
 1) Créer une interface pour mettre le lien d'une chaine youtube pour commencer le traitement de cette chaîne
 2) Créer une interface pour lister toutes les chaines Youtube qui ont été traitées
@@ -42,7 +56,9 @@ Application pour récupérer des informations (celles que vous voulez) sur des c
 4) Créer un système de mises à jour des données déjà présentes avec possibilité de faire du versioning, par exemple, on récupère les données aujourd'hui et demain et on veut voir combien de vues supplémentaires sont présentes depuis la dernière fois
 
 ##### **[#5]** - *facile* - Créer un site pour commander des Pizzas et historique de commandes
-Création d'une application Fullstack pour commander des Pizzas (ou autre) en étant connecté à un compte, il y aura un formulaire complet pour créer son compte et commander des pizzas. Il y aura un compte admin qui permettra de voir les commandes de pizzas pour les réaliser (fictivement). L'admin pourra ainsi accepter la commande ou la refuser et l'utilisateur pourra suivre l'état de sa commande depuis son interface.
+
+Création d'une application Fullstack pour commander des Pizzas (ou autre) en étant connecté à un compte, il y aura un formulaire complet pour créer son compte et commander des pizzas. Il y aura un compte admin qui permettra de voir les commandes de
+pizzas pour les réaliser (fictivement). L'admin pourra ainsi accepter la commande ou la refuser et l'utilisateur pourra suivre l'état de sa commande depuis son interface.
 
 1) Gestion de compte utilisateur avec mot de passe et avec session
 2) Avoir des permissions sur les utilisateurs ou groupes pour pouvoir gérer les utilisateurs si besoin
@@ -52,7 +68,9 @@ Création d'une application Fullstack pour commander des Pizzas (ou autre) en é
 6) Optionnel : Vous pouvez faire des stats sur la pizza la plus achetée ou faire un système de recommandation
 
 ##### **[#6]** - *Complexe* - Faire un système de ticket de support avec notifications
-Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin pourra actualiser et mettre à jour. Dès que le status d'un ticket est mis à jour alors une notification est envoyé à l'utilisateur.
+
+Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin pourra actualiser et mettre à jour. Dès que le status d'un ticket est mis à jour alors une notification est envoyé à 
+l'utilisateur.
 
 1) Gestion de compte utilisateur avec mot de passe et avec session
 2) Avoir des permissions sur les utilisateurs ou groupes pour pouvoir gérer les utilisateurs si besoin
