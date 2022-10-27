@@ -1267,7 +1267,7 @@ Nous allons ajouter un peu de CSS pour que la page soit plus jolie dans le fichi
 }
 ```
 
-On peut aussi créer la page http://localhost:8080/test qui sera créée ) partir du fichier `pages/test/inde.js`
+On peut aussi créer la page http://localhost:8080/test qui sera créée ) partir du fichier `pages/test/index.js`
 
 ```javascript
 import {PageWrapper} from "../../components/pageWrapper";

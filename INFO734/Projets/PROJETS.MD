@@ -25,7 +25,7 @@ Vous devrez utiliser Github Project ou Trello pour faire de la gestion de projet
 3) Il y aura une interface avec plusieurs pages, une pour la "connexion", une page d'accueil avec ce que fait le projet et une page où se trouve les conversations
 4) Il faut que les messages puissent être reçus en temps réel (avec SocketIO par exemple)
 
-##### **[#3]** - *Intermédiaire* - Créer un replica de stackoverflow (ou reddit ou twitter) qui utilise un système de threads avec des commentaires
+##### **[#3]** - *Intermédiaire* - Créer un replica de stackoverflow (ou reddit ou twitter) qui utilise un système de threads avec des commentaires, comme un forum
 
 1) Gestion de compte utilisateur avec mot de passe et avec session
 2) Avoir des permissions sur les utilisateurs ou groupes pour pouvoir gérer les utilisateurs si besoin
@@ -42,9 +42,14 @@ Application pour récupérer des informations (celles que vous voulez) sur des c
 4) Créer un système de mises à jour des données déjà présentes avec possibilité de faire du versioning, par exemple, on récupère les données aujourd'hui et demain et on veut voir combien de vues supplémentaires sont présentes depuis la dernière fois
 
 ##### **[#5]** - *facile* - Créer un site pour commander des Pizzas et historique de commandes
-Création d'une application Fullstack pour commander des Pizzas (ou autre) en étant connecté
+Création d'une application Fullstack pour commander des Pizzas (ou autre) en étant connecté à un compte, il y aura un formulaire complet pour créer son compte et commander des pizzas. Il y aura un compte admin qui permettra de voir les commandes de pizzas pour les réaliser (fictivement). L'admin pourra ainsi accepter la commande ou la refuser et l'utilisateur pourra suivre l'état de sa commande depuis son interface.
 
-
-##### **[#6]** - *Intermédiaire* - Créer un Forum en ligne
+1) Gestion de compte utilisateur avec mot de passe et avec session
+2) Avoir des permissions sur les utilisateurs ou groupes pour pouvoir gérer les utilisateurs si besoin
+3) Faire une interface pour commander UNE ou PLUSIEURS pizza(s)
+4) Les pizzas commandées sont envoyées à un administrateur pour qu'il valide ou non la commande
+5) L'utilisateur pourra suivre ses commandes depuis son interface et voir son historique de commande
+6) Optionnel : Vous pouvez faire des stats sur la pizza la plus achetée ou faire un système de recommandation
 
 ##### **[#6]** - *Complexe* - Faire un système de ticket de support avec notifications
+Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin
