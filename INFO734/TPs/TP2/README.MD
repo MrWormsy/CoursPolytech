@@ -1361,6 +1361,11 @@ import axios from "axios";
 export const LoginForm = ({showErrorMessage, showInfoMessage}) => {
 
     /**
+     * On récupère le router de NextJS
+     */
+    const router = useRouter();
+    
+    /**
      * Les données pour la connection de l'utilisateur
      */
     const [connectionData, setConnectionData] = useState({
