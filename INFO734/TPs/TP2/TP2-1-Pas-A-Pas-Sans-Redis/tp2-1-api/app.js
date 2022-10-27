@@ -190,22 +190,6 @@ io.on('connection', (socket) => {
         io.emit("mon_evenement_pour_tout_le_monde_bien_recu", {id: socket.id, date: data});
     });
 
-    // Pour envoyer et recevoir le dernier message stocké dans Redis
-    socket.on("envoyer_dernier_message", function (data) {
-
-        // On met à jour le dernier message dans Redis à la clef "DERNIER_MESSAGE"
-        redisClient.set("DERNIER_MESSAGE", data)
-
-        // On a rien besoin de renvoyer
-    })
-    socket.on("recevoir_dernier_message", function (data) {
-
-        // On a demandé de renvoyer le dernier message de Redis et c'est ce qu'on fait où la clef de ce dernier message est "DERNIER_MESSAGE"
-        redisClient.get("DERNIER_MESSAGE", function (erreur, leDernierMessage) {
-            socket.emit("recevoir_dernier_message_reponse", leDernierMessage);
-        })
-    })
-
     // Il y a un autre mot clef pour la déconnexion d'une socket !
     socket.on("disconnect", function () {
         io.emit("une_socket_s_est_deconnecte", `La socket '${socket.id}' vient de se déconnecter, au revoir !`);
