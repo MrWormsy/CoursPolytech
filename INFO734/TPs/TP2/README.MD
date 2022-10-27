@@ -730,7 +730,8 @@ module.exports = {
 Après avoir fait ces modifications, vous avez presque créé un backend opérationnel pour créer des comptes et gérer des utilisateurs. "Presque" car pour le moment vous ne pouvez pas ajouter des utilisateurs, car il n'y a pas encore de compte
 administrateur auquel vous pouvez vous connecter pour créer de nouveaux comptes...
 
-Vous allez donc ajouter le fait qu'un utilisateur administrateur soit créé automatiquement s'il n'existe pas déjà avec les lignes suivantes dans le fichier `app.js` du backend (vous allez aussi ajouter une route qui permettra d'envoyer un message via la
+Vous allez donc ajouter le fait qu'un utilisateur administrateur soit créé automatiquement s'il n'existe pas déjà avec les lignes suivantes dans le fichier `app.js` du backend (vous allez aussi ajouter une route qui permettra d'envoyer un message via
+la
 websocket envoyé par un administrateur) :
 
 ```javascript
@@ -805,7 +806,7 @@ ATTENTION, SI VOUS AVEZ DES PROBLEMES AVEC REDIS VEUILLEZ RECUPERER L'API dans `
 
 Maintenant vous pouvez un peu vous amuser avec Postman pour voir si cela fonctionne, et n'oubliez pas d'allumer votre serveur avec la commande `npm run dev` !
 
-Pour vous connecter avec Postman vous allez devoir utiliser une fonction spéciale de se connecter : https://learning.postman.com/docs/sending-requests/authorization/#basic-auth. Si vous avez des questions je pourrai y répondre. 
+Pour vous connecter avec Postman vous allez devoir utiliser une fonction spéciale de se connecter : https://learning.postman.com/docs/sending-requests/authorization/#basic-auth. Si vous avez des questions je pourrai y répondre.
 
 La chaine de caractère `admin` est `8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918` en SHA256 ;)
 
@@ -1089,7 +1090,8 @@ variable change, alors le composant qui a cette variable est re rendu, ce qui lu
 
 Pour savoir ce que fait useEffect voir cette page: https://fr.reactjs.org/docs/hooks-effect.html.
 
-Vous pouvez voir que dans le retour du composant Navbar, il y a des balises HTML, des balises de composants et des sous balises de composants. Mais il y a aussi des accolades et du code javascript dedans, des opérateurs ternaires (des `if/else` mais en écriture courte) pour montrer de la
+Vous pouvez voir que dans le retour du composant Navbar, il y a des balises HTML, des balises de composants et des sous balises de composants. Mais il y a aussi des accolades et du code javascript dedans, des opérateurs ternaires (des `if/else` mais
+en écriture courte) pour montrer de la
 donnée que si la condition est remplie, par exemple si l'utilisateur est connecté alors on veut montrer certaines choses.
 
 Pour le moment le footer et la navbar ne sont pas appelées, mais pour se faire nous allons créer un nouveau composant que l'on va appeler `layoutWrapper.js`, qui va permettre de "wrapper", "entourer" les pages avec le footer et la navbar (puis
