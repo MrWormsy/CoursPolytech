@@ -106,7 +106,7 @@ const store = new MongoDBStore(
 // On configure le middleware de session, ce qui servira pour ajouter un object session qui sera disponible à chaque requête
 app.use(session({
 
-    // On utilise redis pour stocker les sessions utilisateur
+    // On utilise mongoDB pour stocker les sessions utilisateur
     store: store,
 
     // C'est ce qui permet d'encoder et décoder les sessions pour des raisons de sécurité évidentes (il doit être méconnu de tous pour ne pas se faire pirater)

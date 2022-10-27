@@ -42,6 +42,8 @@ Application pour récupérer des informations (celles que vous voulez) sur des c
 4) Créer un système de mises à jour des données déjà présentes avec possibilité de faire du versioning, par exemple, on récupère les données aujourd'hui et demain et on veut voir combien de vues supplémentaires sont présentes depuis la dernière fois
 
 ##### **[#5]** - *facile* - Créer un site pour commander des Pizzas et historique de commandes
+Création d'une application Fullstack pour commander des Pizzas (ou autre) en étant connecté
+
 
 ##### **[#6]** - *Intermédiaire* - Créer un Forum en ligne
 
