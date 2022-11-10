@@ -1846,6 +1846,18 @@ C'est bien beau de se déconnecter en allant sur une page web, mais il faudrait 
 mis à jour, il faut ajouter les lignes dans `components/navbar.js`
 
 ```javascript
+import {Navbar as BulmaNavbar} from 'react-bulma-components'
+import React, {useEffect, useState} from 'react'
+import Link from "next/link";
+import {checkIfUserLogged} from "../utils/utils";
+
+/**
+ * La navbar
+ * @param router Le router de NextJS
+ */
+export const Navbar = ({router}) => {
+
+
 ...
 
 /**

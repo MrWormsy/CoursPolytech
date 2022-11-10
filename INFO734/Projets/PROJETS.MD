@@ -46,9 +46,9 @@ Application pour créer un forum qui est composé d'un sujet ou thread et où de
 
 ##### **[#4]** - *facile* - Créer un site de statistiques sur des chaines Youtube
 
-Application pour récupérer des informations (celles que vous voulez) sur des chaines Youtube (que les vidéos dans un premier temps) grâce à l'API de Youtube et montrer ces informations sous la forme qui vous conviendra le mieux (dashboard, tableau,
-ect). Les données récupérées doivent être persistées dans une base de données pour ne pas devoir refaire des requêtes. Les requêtes et les traitements associés doivent tourner en arrière-plan quand on demande une requête. Vous pouvez créer un système
-de status pour savoir quelles sont les chaînes en cours de traitement.
+Application pour récupérer des informations sur des chaines Youtube (que les vidéos dans un premier temps) grâce à l'API de Youtube et montrer ces informations dans l'interface sous la forme qui vous conviendra le mieux (dashboard, tableau,
+ect). Les données récupérées doivent être persistées dans une base de données pour ne pas devoir refaire des requêtes. Les requêtes et les traitements associés doivent tourner si possible en arrière-plan quand on demande une requête. Vous pouvez
+créer un système de status pour savoir quelles sont les chaînes en cours de traitement.
 
 1) Créer une interface pour mettre le lien d'une chaine youtube pour commencer le traitement de cette chaîne
 2) Créer une interface pour lister toutes les chaines Youtube qui ont été traitées
@@ -69,7 +69,7 @@ pizzas pour les réaliser (fictivement). L'admin pourra ainsi accepter la comman
 
 ##### **[#6]** - *Complexe* - Faire un système de ticket de support avec notifications
 
-Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin pourra actualiser et mettre à jour. Dès que le status d'un ticket est mis à jour alors une notification est envoyé à 
+Création d'une application pour créer des tickets de support qui auront des états (ouverts, fermés, en cours, ect) et qu'un admin pourra actualiser et mettre à jour. Dès que le status d'un ticket est mis à jour alors une notification est envoyé à
 l'utilisateur.
 
 1) Gestion de compte utilisateur avec mot de passe et avec session
