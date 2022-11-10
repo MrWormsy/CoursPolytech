@@ -1,5 +1,6 @@
 # Projets INFO 734
 
+
 #### Notes
 
 /!\ Attention de ne pas laisser les clefs d'API trainer dans votre code, il faut utiliser le package `dotenv` pour créer des fichiers `.env` et ainsi ne pas divulguer des informations sensibles /!\
