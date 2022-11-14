@@ -22,6 +22,7 @@ Je vous évaluerai sur ces points, pendant le projet et jusqu'au mercredi 4 janv
 - Prise de risques même si non aboutis
 - Bon fonctionnement du code
 - Documentation de l'installation et de l'utilisation du projet
+- Utilisation de Docker pour le déploiement de l'application (n'est pas obligatoire, mais fortement conseillé)
 
 ## Idées de projet
 
