@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DC js - Composite Chart</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/style/dc.min.css" rel="stylesheet"/>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/dc.min.js"></script>
+</head>
+<body style="margin: 0">
+
+<div id="chart" style="width: 90vw;height: 90vh"></div>
+
+</body>
+</html>
+
+<script>
+
+    // On récupère le fichier de données avec d3.csv
+    d3.csv("/data/people.csv").then((data) => {
+
+        // On crée le crossfilter
+        const dataCrossfilter = crossfilter();
+
+        // On ajoute de la donnée au crossfitler mais modifiée
+        dataCrossfilter.add(data.map(function (d) {
+            return {
+                age: Math.floor((Date.now() - new Date(d.DOB)) / (31557600000)),
+                male: d.gender === 'Male' ? 1 : 0,
+                female: d.gender === 'Male' ? 0 : 1
+            };
+        }));
+
+        // On crée la dimension sur l'age
+        const dataDimension = dataCrossfilter.dimension(dc.pluck('age'))
+
+        // On crée deux groupes, un pour chaque sexe
+        const dataGroup1 = dataDimension.group().reduceSum(dc.pluck('male'));
+        const dataGroup2 = dataDimension.group().reduceSum(dc.pluck('female'));
+
+        // On crée le graphique, par exemple un compositeChart chart avec comme groupe de graphique "dashboard"
+        const dataChart = dc.compositeChart('#chart', "dashboard");
+
+        // On applique la dimension, le groupe et les options d'un composite chart si besoin
+        dataChart
+            .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+            .x(d3.scaleLinear().domain([15, 70])) // On veut limiter le domaine de visualisation entre 15 et 70 ans
+            .yAxisLabel("Nombre") // On met le label de l'axe y
+            .xAxisLabel("Age") // // On met le label de l'axe x
+            .compose([
+                dc.lineChart(dataChart) // On ajoute un line chart
+                    .dimension(dataDimension) // On ajoute la dimension
+                    .group(dataGroup1, "Male") // On ajoute le groupe
+                    .colors('red') // On lui donne des options : ici la couleur du trait
+                    .dashStyle([2, 2]), // On lui donne des options : ici le style du trait
+                dc.lineChart(dataChart) // On ajoute un line chart
+                    .dimension(dataDimension) // On ajoute la dimension
+                    .group(dataGroup2, "Female") // On ajoute le groupe
+                    .colors('blue') // On lui donne des options : ici la couleur du trait
+                    .dashStyle([5, 5]) // On lui donne des options : ici le style du trait
+            ])
+
+        // On veut rendre tous les graphiques qui ont le groupe de graphique "dashboard"
+        dc.renderAll("dashboard");
+    });
+</script>

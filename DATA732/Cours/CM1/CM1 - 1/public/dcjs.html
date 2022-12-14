@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/style/dc.min.css" rel="stylesheet"/>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/dc.min.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    const fruits = crossfilter([
+        {name: "Pomme", type: "fruit", count: 3},
+        {name: "Carotte", type: "legume", count: 8},
+        {name: "Poire", type: "fruit", count: 50},
+        {name: "Salade", type: "legume", count: 40}
+    ]);
+
+    const filtering = fruits.dimension(function (d) {
+        return d.type;
+    });
+    filtering.filter("fruit");
+    console.log(JSON.stringify(filtering.top(Infinity)))
+
+    const grouping = filtering.group();
+    console.log(JSON.stringify(grouping.reduceCount().top(Infinity)));
+</script>
+
