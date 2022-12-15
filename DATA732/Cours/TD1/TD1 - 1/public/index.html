@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DC js - TD 1</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/style/dc.min.css" rel="stylesheet"/>
+    <link crossorigin="" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" rel="stylesheet"/>
+    <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" rel="stylesheet"/>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/dc.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script crossorigin="" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+    <script src="/dc.leaflet.js"></script>
+    <script src="/viz.js"></script>
+
+    <style>
+
+        body {
+            margin: 0.5rem;
+            width: calc(-1rem + 100vw);
+            height: calc(-1rem + 100vh);
+            overflow: hidden;
+        }
+
+        .topContainer {
+            display: grid;
+            grid-gap: 0.5rem;
+
+            height: 100%;
+
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+        }
+
+        .container {
+            padding: 0.5rem;
+            height: calc(-1rem + 25vh);
+        }
+
+        .dc-chart g.row text, .dc-chart .pie-slice {
+            fill: #000;
+        }
+
+        #attentionDesMediasChart {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        #schoolLevelChart {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        #saisonsChart {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        #locationsChart {
+            grid-column-start: 5;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        #nbMassShootingParDateChart {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+
+        #localisationOnMapContainer {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            height: calc(-4rem + 75vh);
+        }
+
+        #localisationOnMap {
+            height: calc(-4rem + 75vh);
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="reset()" style="position: absolute;top: 0;right: 0;margin: 1rem">Reset</button>
+
+<div class="topContainer">
+    <div class="container" id="attentionDesMediasChart"></div>
+    <div class="container" id="schoolLevelChart"></div>
+    <div class="container" id="saisonsChart"></div>
+    <div class="container" id="locationsChart"></div>
+    <div class="container" id="nbMassShootingParDateChart"></div>
+    <div class="container" id="localisationOnMapContainer">
+        <div class="map" id='localisationOnMap'></div>
+        <div id='localisationOnMapChart'></div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    // On crée la visualisation quand le document est chargé
+    createDataViz()
+</script>
