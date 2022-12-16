@@ -46,35 +46,35 @@
             fill: #000;
         }
 
-        #attentionDesMediasChart {
+        #attentionDesMediasChartAnchor {
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 1;
             grid-row-end: 1;
         }
 
-        #schoolLevelChart {
+        #schoolLevelChartAnchor {
             grid-column-start: 5;
             grid-column-end: 6;
             grid-row-start: 1;
             grid-row-end: 1;
         }
 
-        #saisonsChart {
+        #saisonsChartAnchor {
             grid-column-start: 4;
             grid-column-end: 5;
             grid-row-start: 2;
             grid-row-end: 2;
         }
 
-        #locationsChart {
+        #locationsChartAnchor {
             grid-column-start: 5;
             grid-column-end: 6;
             grid-row-start: 2;
             grid-row-end: 2;
         }
 
-        #nbMassShootingParDateChart {
+        #nbMassShootingParDateChartAnchor {
             grid-column-start: 1;
             grid-column-end: 6;
             grid-row-start: 3;
@@ -99,12 +99,28 @@
 <button onclick="reset()" style="position: absolute;top: 0;right: 0;margin: 1rem">Reset</button>
 
 <div class="topContainer">
-    <div class="container" id="attentionDesMediasChart"></div>
-    <div class="container" id="schoolLevelChart"></div>
-    <div class="container" id="saisonsChart"></div>
-    <div class="container" id="locationsChart"></div>
-    <div class="container" id="nbMassShootingParDateChart"></div>
+    <div class="container" id="attentionDesMediasChartAnchor">
+        <h3>Niveau d'attention des médias</h3>
+        <div id="attentionDesMediasChart"></div>
+    </div>
+    <div class="container" id="schoolLevelChartAnchor">
+        <h3>Niveau scolaire des lieux</h3>
+        <div id="schoolLevelChart"></div>
+    </div>
+    <div class="container" id="saisonsChartAnchor">
+        <h3>Saison lors de l'événement</h3>
+        <div id="saisonsChart"></div>
+    </div>
+    <div class="container" id="locationsChartAnchor">
+        <h3>Localisation des événement</h3>
+        <div id="locationsChart"></div>
+    </div>
+    <div class="container" id="nbMassShootingParDateChartAnchor">
+        <h3>Nombre d'événements par années</h3>
+        <div id="nbMassShootingParDateChart"></div>
+    </div>
     <div class="container" id="localisationOnMapContainer">
+        <h3>Carte des événements</h3>
         <div class="map" id='localisationOnMap'></div>
         <div id='localisationOnMapChart'></div>
     </div>
