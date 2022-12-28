@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DC js - TP 1 - 3*3</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/style/dc.min.css" rel="stylesheet"/>
+    <link crossorigin="" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" rel="stylesheet"/>
+    <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" rel="stylesheet"/>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/4.2.7/dc.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+
+    <script src="/viz.js"></script>
+
+    <style>
+
+        body {
+            margin: 0.5rem;
+            width: calc(-1rem + 100vw);
+            height: calc(-1rem + 100vh);
+        }
+
+        .topContainer {
+            display: grid;
+            grid-gap: 0.5rem;
+            height: 100%;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .container {
+            border: 1px solid black;
+            height: calc(-2rem + 33vh);
+            padding: 0.5rem;
+        }
+
+        .container > h3 {
+            text-align: center;
+        }
+
+        #chart1Anchor {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        #chart2Anchor {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        #chart3Anchor {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 1;
+        }
+
+        #chart4Anchor {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        #chart5Anchor {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        #chart6Anchor {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 2;
+        }
+
+        #chart7Anchor {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+
+        #chart8Anchor {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+
+        #chart9Anchor {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 3;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="reset()" style="position: absolute;top: 0;right: 0;margin: 1rem">Reset</button>
+
+<div class="topContainer">
+    <div class="container" id="chart1Anchor">
+        <h3>chart1</h3>
+        <div id="chart1"></div>
+    </div>
+    <div class="container" id="chart2Anchor">
+        <h3>chart2</h3>
+        <div id="chart2"></div>
+    </div>
+    <div class="container" id="chart3Anchor">
+        <h3>chart3</h3>
+        <div id="chart3"></div>
+    </div>
+    <div class="container" id="chart4Anchor">
+        <h3>chart4</h3>
+        <div id="chart4"></div>
+    </div>
+    <div class="container" id="chart5Anchor">
+        <h3>chart5</h3>
+        <div id="chart5"></div>
+    </div>
+    <div class="container" id="chart6Anchor">
+        <h3>chart6</h3>
+        <div id="chart6"></div>
+    </div>
+    <div class="container" id="chart7Anchor">
+        <h3>chart7</h3>
+        <div id="chart7"></div>
+    </div>
+    <div class="container" id="chart8Anchor">
+        <h3>chart8</h3>
+        <div id="chart8"></div>
+    </div>
+    <div class="container" id="chart9Anchor">
+        <h3>chart9</h3>
+        <div id="chart9"></div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    (() => {
+        // On crée la visualisation quand le document est chargé
+        createDataViz()
+    })()
+</script>
