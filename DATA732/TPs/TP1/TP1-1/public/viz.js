@@ -39,7 +39,6 @@ async function createDataViz() {
         d["Composer"] = d["Composer"] === "Yes";
         d["Exploratory"] = d["Exploratory"] === "Yes";
         d["Foreign languages"] = d["Foreign languages"] === "Yes";
-        d["While working"] = d["While working"] === "Yes";
 
         d["Age"] = +d["Age"];
         d["Hours per day"] = +d["Hours per day"];
