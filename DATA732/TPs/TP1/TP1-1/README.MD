@@ -22,8 +22,8 @@ Une fois les visualisations faites vous devrez faire une petite description pour
 
 Vous avez deux fichiers html que vous pouvez utiliser (suivant le nombre de visualisations) :
 
-- `/public/index3*2.html` - http://localhost:3000/index3*2.html - Visualisation de 3 x 2 graphiques
-- `/public/index3*3.html` - http://localhost:3000/index3*3.html - Visualisation de 3 x 3 graphiques
+- `/public/index3-2.html` - http://localhost:3000/index3-2.html - Visualisation de 3 x 2 graphiques
+- `/public/index3-3.html` - http://localhost:3000/index3-3.html - Visualisation de 3 x 3 graphiques
 
 Vous allez leur donner des titres et donner des noms aux axes, vous pouvez utiliser les exemples de DC.js :
 
